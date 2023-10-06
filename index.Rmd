@@ -1,0 +1,377 @@
+---
+title: "MRSE"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: cerulean
+    css: estilo.css
+    logo: logo.png
+    favicon: imagen1.png
+    storyboard: true
+    social: menu
+    vertical_layout: fill
+    source: embed
+    orientation: columns
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(highcharter)
+library(tidyverse)
+library(plotly)
+library(ggthemes)
+library(lubridate)
+library(vembedr)
+library(leaflet)
+library(sf)
+```
+
+
+Presentación {data-icon="fa-droplet"}
+===
+
+Column {data-width=200}
+---
+<center>
+<!-- ![](https://cdn.www.gob.pe/uploads/campaign/photo/000/001/008/Logo-EALV-sin-fondo.png){width="200"} -->
+![](mrse_logo.png){width="85%"}
+
+</center>
+
+### <span style="color:darkblue;font-weight:bold;">Bienvenida a esta plataforma de acceso público</span>
+
+***MRSE-H de la EPS Ilo S.A.***
+
+> EPS Ilo S.A. realiza implementación del Plan de Intervención los MRSE en la Comunidad Campesina de Asana con la finalidad de conservación y recuperación de los Servicios Ecosistémicos Hídricos.
+
+***Equipo MRSE***
+<br><br>
+<center>
+
+```{r}
+embed_youtube("FqETSuNF4ks", height = 215, width = NULL,allowfullscreen = TRUE)
+```
+</center>
+
+Column {.tabset data-width="500" .tabset-fade}
+---
+
+### <span style="color:darkblue;font-weight:bold;">NOSOTROS</span>
+
+<div class="contenedor-imagen">
+  <img src="fondo2.jpg" alt="Imagen 1">
+  <img src="fondo3.jpg" alt="Imagen 2">
+  <img src="fondo4.jpg" alt="Imagen 3">
+</div>
+
+<!-- Agrega botones para avanzar y retroceder -->
+<button id="anterior">Anterior</button>
+<button id="siguiente">Siguiente</button>
+
+```{js collapse=FALSE}
+var currentImage = 0;
+var images = document.querySelectorAll('.contenedor-imagen img');
+var anteriorButton = document.getElementById('anterior');
+var siguienteButton = document.getElementById('siguiente');
+
+// Funcion para avanzar a la siguiente imagen
+function avanzar() {
+  images[currentImage].classList.add('image-previous');
+  images[currentImage].style.opacity = 0;
+  currentImage = (currentImage + 1) % images.length;
+  images[currentImage].style.opacity = 1;
+  images[currentImage].classList.remove('image-previous');
+}
+
+// Funcion para retroceder a la imagen anterior
+function retroceder() {
+  images[currentImage].classList.add('image-previous');
+  images[currentImage].style.opacity = 0;
+  currentImage = (currentImage - 1 + images.length) % images.length;
+  images[currentImage].style.opacity = 1;
+  images[currentImage].classList.remove('image-previous');
+}
+
+// Manejadores de clic para los botones
+anteriorButton.addEventListener('click', retroceder);
+siguienteButton.addEventListener('click', avanzar);
+
+// Cambia la imagen automaticamente cada 6 segundos
+setInterval(avanzar, 6000);
+```
+
+### <span style="color:darkblue;font-weight:bold;">DIAPOSITIVAS</span>
+
+```{r}
+xaringanExtra::embed_xaringan("m2/pres.html")
+```
+
+
+Precipitación {data-icon="fa-chart-simple"}
+===
+
+## Column {data-width="600"}
+
+
+
+```{r}
+# Carga de la base de datos:
+df <- read.csv("data_marzo")
+
+df$date <- as.POSIXct(
+  paste(df$date, df$hora, sep = " "),
+  format = "%Y-%m-%d %H:%M")
+
+df$hora <- NULL
+
+# Últimos datos descargados:
+descargado <- read.csv("n4.csv", skip = 1)[-1]
+names(descargado) <- c("date", "pp")
+descargado$date <- as.POSIXct(
+  descargado$date, format = "%y/%m/%d %H:%M")
+
+# Unión de datasets
+df2 <- rbind(df, descargado)
+```
+
+<!-- Conversión a data diaria: -->
+
+```{r}
+df3 <- df2 %>% 
+  mutate(date0 = as.Date(date, format = "%Y-%m-%d"),
+         date1 = format(date, format = "%Y-%m"),
+         date2 = format(date, format = "%d")) %>% 
+  reframe(pp = sum(pp, na.rm = T), .by = c(date1,date2))
+```
+
+### <span style="color:darkblue;font-weight:bold;">DATOS CRUDOS (DESCARGA)</span>
+
+```{r}
+data <- df2
+names(data) <- c("fecha", "Precipitacion")
+data$fecha <- as.numeric(data$fecha)*1000-(5*3600*1000)
+
+highchart(type = "stock") %>%
+  hc_title(text = "Estación Asana (Datos crudos)") %>%
+  hc_xAxis(type = "datetime") %>%
+  hc_add_series(data = data, type = "column",
+                hcaes(x = fecha, y = Precipitacion),
+                name = "Precipitacion", color = "#3182BD") %>%
+  hc_exporting(
+    enabled = TRUE,
+    buttons = list(
+      contextButton = list(
+        menuItems = c("downloadPNG",
+                      "downloadPDF",
+                      "separator",
+                      "downloadCSV",
+                      "downloadXLS",
+                      "separator",
+                      "resetZoom")
+      )
+    )
+  ) %>% 
+  hc_xAxis(type = "datetime", showLastLabel = TRUE,
+           dateTimeLabelFormats = list(month = "%B")) %>% 
+  hc_tooltip(shared = TRUE, useHTML = TRUE) %>% 
+  hc_chart(zoomType = "x")
+```
+
+### <span style="color:darkblue;font-weight:bold;">MESES COLECTADOS</span>
+
+```{r}
+cantidad <- sum(length(unique(df3$date1)))
+gauge(paste0(cantidad, "meses"), min = 0, max = 12, gaugeSectors(
+  danger = c(0, 2), warning = c(3, 5), success = c(6, 10)
+))
+```
+
+## Column {data-width="600"}
+
+### <span style="color:darkblue;font-weight:bold;">GRÁFICO DE BARRAS</span>
+
+```{r}
+df4 <- df3
+names(df4) <- c("fecha1","fecha3", "Precipitacion")
+m2 <- df4 %>% ggplot(aes(x=factor(fecha3),y=Precipitacion))+
+  geom_bar(stat="identity",fill="turquoise", position = )+
+  labs(x="Fecha",y="Precipitación (mm)") + 
+  theme_minimal() + theme(plot.title = element_text(size = 14,
+    face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12,
+    face = "italic", hjust = 0.5),
+    legend.position = "none",
+    strip.text.x = element_text(colour = "white",face = "bold",
+                                family = "helvetica"),
+    strip.background = element_rect(
+     color="#3182BD", fill="#3182BD",
+     size=1.5, linetype="solid"),
+    axis.title = element_text(size = 5),
+    axis.text.x = element_text(size = 5,
+        angle = 90)) +
+  facet_wrap(~fecha1,ncol=2)
+ggplotly(p=m2)
+```
+
+## Column {data-width="200"}
+
+### Precipitación acumulada
+```{r}
+valueBox(paste0(sum(df2$pp, na.rm=T)," milímetros"), icon = "fa-droplet")
+```
+
+### Inicio de registro
+
+```{r}
+valueBox(min(df2$date, na.rm=T), icon = "fa-pencil")
+```
+
+### Último registro
+
+```{r}
+valueBox(max(df2$date, na.rm=T), icon = "fa-pencil")
+```
+
+### <a href="https://felt.com/map/MRSE-H-YL2D8IAiQoucf0SETYCFBC?loc=-17.04095,-70.48828,12.2z" style="color: darkblue; font-weight: bold; text-decoration: none;">MAPA WEB (Clic aquí para ser dirigido a un mapa más detallado)</a>
+
+
+```{r}
+library(leaflet)
+leaflet() %>% 
+  addTiles() %>%
+  addMarkers(lat=-17.062286,lng=-70.520806,
+             popup = paste(sep="<br>","<b>Lugar:</b>","Estación pluviométrica","<b>Latitud:</b>","-17.062286","<b>Longitud:</b>"
+                           ,"-70.520806")) %>% 
+  addCircleMarkers(lat=c(-17.062286,-17.630402),
+                   lng=c(-70.520806,-71.335089), radius = 40,
+                   color="deepskyblue") %>% 
+  addMarkers(lat=-17.630402,lng=-71.335089,
+             popup = paste(sep="<br>","<b>Lugar:</b>","EPS ILO S.A.","<b>Latitud:</b>","-17.630402","<b>Longitud:</b>",
+                           "-71.19908"))
+```
+
+Datos futuros {data-icon="fa-chart-simple"}
+===
+
+## Column {data-width="600" .tabset}
+
+### <span style="color:darkblue;font-weight:bold;">GRÁFICO DE DATOS DIARIOS</span>
+
+```{r}
+data <- read.csv("simulados.csv")
+data$fecha_hora <- as.POSIXct(
+  data$fecha_hora,format="%Y-%m-%d %H:%M")
+
+pp <- data %>% mutate(
+  fecha_hora = as.Date(
+    fecha_hora, format = "%Y-%m-%d")) %>% 
+  group_by(fecha_hora) %>% 
+  summarise(precipitacion = sum(precipitacion, na.rm = T)) %>% 
+  select(fecha_hora, precipitacion)
+
+s <- data %>% mutate(
+  fecha_hora = as.Date(
+    fecha_hora, format = "%Y-%m-%d")) %>% 
+  group_by(fecha_hora) %>% 
+  summarise_if(is.numeric,.funs = mean)
+
+s$precipitacion <- pp$precipitacion
+
+highchart() %>%
+  hc_title(text = "Estación Asana (Datos diarios)") %>%
+  hc_xAxis(type = "datetime") %>%
+  hc_add_series(data = s, type = "line",
+                hcaes(x = fecha_hora, y = precipitacion),
+                name = "Precipitacion", color = "#3182BD") %>%
+  hc_add_series(data = s, type = "line",
+                hcaes(x = fecha_hora, y = temperatura),
+                name = "Temperatura", color = "hotpink") %>%
+  hc_add_series(data = s, type = "line",
+                hcaes(x = fecha_hora, y = humedad),
+                name = "Humedad", color = "turquoise") %>%
+  hc_exporting(
+    enabled = TRUE,
+    buttons = list(
+      contextButton = list(
+        menuItems = c("downloadPNG",
+                      "downloadPDF",
+                      "downloadCSV",
+                      "downloadXLS")
+      )
+    )
+  ) %>% 
+  hc_xAxis(type = "datetime", showLastLabel = TRUE,
+           dateTimeLabelFormats = list(month = "%B")) %>% 
+  hc_tooltip(shared = TRUE, useHTML = TRUE) %>% 
+  hc_chart(zoomType = "x")
+```
+
+### <span style="color:darkblue;font-weight:bold;">ROSA DE VIENTO</span>
+
+```{r}
+rosadf <- data
+names(rosadf) <- c("date","temp","hum","wd","ws","sr","pp")
+
+openair::windRose(rosadf,cols = "magma", hemisphere = "southern", type = "season", paddle = F )
+```
+
+## Column {data-width="200"}
+
+### Precipitación acumulada total
+
+```{r}
+valueBox(paste0(sum(s$precipitacion, na.rm=T)," milímetros"), icon = "fa-droplet")
+
+```
+
+### Temperatura media
+
+```{r}
+valueBox(paste0(round(mean(s$temperatura, na.rm=T),2),"°C"), icon = "fa-temperature-empty",color = "hotpink")
+```
+
+### Humedad Relativa media
+
+```{r}
+valueBox(paste0(round(mean(s$humedad, na.rm=T),2)," %"),
+         icon = "fa-cloud",color = "turquoise")
+```
+
+### Radiación solar
+
+```{r}
+valueBox(paste0(round(mean(s$radiacion_solar, na.rm=T),2)," W/m2"),
+         icon = "fa-sun",color = "yellow")
+```
+
+### Velocidad del viento
+
+```{r}
+valueBox(paste0(round(mean(s$velocidad_viento, na.rm=T),2)," m/s"),
+         icon = "fa-wind",color = "skyblue")
+```
+
+Noticias {.storyboard data-icon="fa-newspaper"}
+===
+  
+### EL INICIO DE LA IMPLEMENTACIÓN
+
+![](TIME_LINE/F1.png)
+
+### SUPERVISIÓN DE ZANJAS DE INFILTRACIÓN
+
+![](TIME_LINE/F1.1.png)
+
+### VERIFICACIÓN DE INSTALACIÓN DE PLUVIÓMETRO
+
+![](TIME_LINE/F2.png)
+
+### PARTICIPACIÓN EN PLATAFORMA DE BUENA GOBERNANZA
+
+![](TIME_LINE/F3.png)
+
+### APROBACIÓN DEL ACUERDO MERESE ANTE EL MINAM
+
+![](TIME_LINE/F4.png)
+
