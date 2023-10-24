@@ -28,7 +28,18 @@ library(leaflet)
 library(sf)
 ```
 
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8B5C6WFB9Q">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-8B5C6WFB9Q');
+  </script>
+</head>
 Presentación {data-icon="fa-droplet"}
 ===
 
@@ -36,7 +47,6 @@ Column {data-width=200}
 ---
 <center>
 <!-- ![](https://cdn.www.gob.pe/uploads/campaign/photo/000/001/008/Logo-EALV-sin-fondo.png){width="200"} -->
-
 ![](mrse_logo.png){width="85%"}
 
 </center>
@@ -210,7 +220,7 @@ names(data) <- c("fecha", "Precipitacion")
 data$fecha <- as.numeric(data$fecha)*1000-(5*3600*1000)
 
 highchart(type = "stock") %>%
-  hc_title(text = "Estación Asana (Datos crudos)") %>%L
+  hc_title(text = "Estación Asana (Datos crudos)") %>%
   hc_xAxis(type = "datetime") %>%
   hc_add_series(data = data, type = "column",
                 hcaes(x = fecha, y = Precipitacion),
@@ -308,113 +318,6 @@ leaflet() %>%
                            "-71.19908"))
 ```
 
-Datos futuros {data-icon="fa-chart-simple"}
-===
-
-## Column {data-width="600" .tabset}
-
-### <span style="color:darkblue;font-weight:bold;">GRÁFICO DE DATOS DIARIOS</span>
-
-```{r}
-data <- read.csv("simulados.csv")
-data$fecha_hora <- as.POSIXct(
-  data$fecha_hora,format="%Y-%m-%d %H:%M")
-
-pp <- data %>% mutate(
-  fecha_hora = as.Date(
-    fecha_hora, format = "%Y-%m-%d")) %>% 
-  group_by(fecha_hora) %>% 
-  summarise(precipitacion = sum(precipitacion, na.rm = T)) %>% 
-  select(fecha_hora, precipitacion)
-
-s <- data %>% mutate(
-  fecha_hora = as.Date(
-    fecha_hora, format = "%Y-%m-%d")) %>% 
-  group_by(fecha_hora) %>% 
-  summarise_if(is.numeric,.funs = mean)
-
-s$precipitacion <- pp$precipitacion
-
-highchart() %>%
-  hc_title(text = "Estación Asana (Datos diarios)") %>%
-  hc_xAxis(type = "datetime") %>%
-  hc_add_series(data = s, type = "line",
-                hcaes(x = fecha_hora, y = precipitacion),
-                name = "Precipitacion", color = "#3182BD") %>%
-  hc_add_series(data = s, type = "line",
-                hcaes(x = fecha_hora, y = temperatura),
-                name = "Temperatura", color = "hotpink") %>%
-  hc_add_series(data = s, type = "line",
-                hcaes(x = fecha_hora, y = humedad),
-                name = "Humedad", color = "turquoise") %>%
-  hc_exporting(
-    enabled = TRUE,
-    buttons = list(
-      contextButton = list(
-        menuItems = c("downloadPNG",
-                      "downloadPDF",
-                      "downloadCSV",
-                      "downloadXLS")
-      )
-    )
-  ) %>% 
-  hc_xAxis(type = "datetime", showLastLabel = TRUE,
-           dateTimeLabelFormats = list(month = "%B")) %>% 
-  hc_tooltip(shared = TRUE, useHTML = TRUE) %>% 
-  hc_chart(zoomType = "x")
-```
-
-### <span style="color:darkblue;font-weight:bold;">ROSA DE VIENTO</span>
-
-```{r}
-rosadf <- data
-names(rosadf) <- c("date","temp","hum","wd","ws","sr","pp")
-
-openair::windRose(rosadf,cols = "magma", hemisphere = "southern", type = "season", paddle = F )
-```
-
-### <span style="color:darkblue;font-weight:bold;">DIAPOSITIVAS</span>
-
-```{r}
-xaringanExtra::embed_xaringan("m2/pres.html")
-```
-
-## Column {data-width="200"}
-
-### Precipitación acumulada total
-
-```{r}
-valueBox(paste0(sum(s$precipitacion, na.rm=T)," milímetros"), icon = "fa-droplet")
-
-```
-
-### Temperatura media
-
-```{r}
-valueBox(paste0(round(mean(s$temperatura, na.rm=T),2),"°C"), icon = "fa-temperature-empty",color = "hotpink")
-```
-
-### Humedad Relativa media
-
-```{r}
-valueBox(paste0(round(mean(s$humedad, na.rm=T),2)," %"),
-         icon = "fa-cloud",color = "turquoise")
-```
-
-### Radiación solar
-
-```{r}
-valueBox(paste0(round(mean(s$radiacion_solar, na.rm=T),2)," W/m2"),
-         icon = "fa-sun",color = "yellow")
-```
-
-### Velocidad del viento
-
-```{r}
-valueBox(paste0(round(mean(s$velocidad_viento, na.rm=T),2)," m/s"),
-         icon = "fa-wind",color = "skyblue")
-```
-
 Noticias {.storyboard data-icon="fa-newspaper"}
 ===
   
@@ -437,4 +340,3 @@ Noticias {.storyboard data-icon="fa-newspaper"}
 ### APROBACIÓN DEL ACUERDO MERESE ANTE EL MINAM
 
 ![](TIME_LINE/F4.png)
-
