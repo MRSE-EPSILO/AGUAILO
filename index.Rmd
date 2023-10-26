@@ -2,6 +2,8 @@
 title: "MRSE"
 output: 
   flexdashboard::flex_dashboard:
+    includes:
+       in_header: GA_Script.html
     theme: 
       version: 4
       bootswatch: cerulean
@@ -26,18 +28,6 @@ library(lubridate)
 library(vembedr)
 library(leaflet)
 library(sf)
-```
-
-```{js}
-
-async src="https://www.googletagmanager.com/gtag/js?id=G-8B5C6WFB9Q"></script>
-
-window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8B5C6WFB9Q');
-
 ```
 
 
