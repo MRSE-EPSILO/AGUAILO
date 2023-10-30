@@ -28,6 +28,7 @@ library(lubridate)
 library(vembedr)
 library(leaflet)
 library(sf)
+library(openair)
 ```
 
 
@@ -309,6 +310,102 @@ leaflet() %>%
                            "-71.19908"))
 ```
 
+Datos futuros {data-icon="fa-chart-simple"}
+===
+
+## Column {.tabset data-width="600"}
+
+### <span style="color:darkblue;font-weight:bold;">GRÁFICO DE DATOS DIARIOS</span>
+
+```{r}
+data <- read.csv("simulados.csv")
+data$fecha_hora <- as.POSIXct(
+  data$fecha_hora,format="%Y-%m-%d %H:%M")
+
+pp <- data %>% mutate(
+  fecha_hora = as.Date(
+    fecha_hora, format = "%Y-%m-%d")) %>% 
+  group_by(fecha_hora) %>% 
+  summarise(precipitacion = sum(precipitacion, na.rm = T)) %>% 
+  select(fecha_hora, precipitacion)
+
+s <- data %>% mutate(
+  fecha_hora = as.Date(
+    fecha_hora, format = "%Y-%m-%d")) %>% 
+  group_by(fecha_hora) %>% 
+  summarise_if(is.numeric,.funs = mean)
+
+s$precipitacion <- pp$precipitacion
+
+highchart() %>%
+  hc_title(text = "Estación Asana (Datos diarios)") %>%
+  hc_xAxis(type = "datetime") %>%
+  hc_add_series(data = s, type = "line",
+                hcaes(x = fecha_hora, y = precipitacion),
+                name = "Precipitacion", color = "#3182BD") %>%
+  hc_add_series(data = s, type = "line",
+                hcaes(x = fecha_hora, y = temperatura),
+                name = "Temperatura", color = "hotpink") %>%
+  hc_add_series(data = s, type = "line",
+                hcaes(x = fecha_hora, y = humedad),
+                name = "Humedad", color = "turquoise") %>%
+  hc_exporting(
+    enabled = TRUE,
+    buttons = list(
+      contextButton = list(
+        menuItems = c("downloadPNG",
+                      "downloadPDF",
+                      "downloadCSV",
+                      "downloadXLS")
+      )
+    )
+  ) %>% 
+  hc_xAxis(type = "datetime", showLastLabel = TRUE,
+           dateTimeLabelFormats = list(month = "%B")) %>% 
+  hc_tooltip(shared = TRUE, useHTML = TRUE) %>% 
+  hc_chart(zoomType = "x")
+```
+
+### <span style="color:darkblue;font-weight:bold;">ROSA DE VIENTOS</span>
+
+```{r}
+windRose(mydata,paddle = F,type = "season", hemisphere = "southern")
+```
+
+### <span style="color:darkblue;font-weight:bold;">DIAPOSITIVAS</span>
+
+```{r}
+xaringanExtra::embed_xaringan("m2/pres.html")
+```
+
+## Column {data-width="150"}
+
+### Precipitación acumulada
+
+```{r}
+valueBox(paste0(sum(s$precipitacion, na.rm=T)," milímetros"), icon = "fa-droplet")
+```
+
+### Radiación solar
+
+```{r}
+valueBox(paste0(round(mean(s$radiacion_solar, na.rm=T),2)," W/m2"), icon = "fa-sun", color = "yellow")
+```
+
+### Humedad relativa
+
+```{r}
+valueBox(paste0(round(mean(s$humedad, na.rm=T),2)," %"), icon = "fa-wind",
+         color = "turquoise")
+```
+
+### Temperatura media
+
+```{r}
+valueBox(paste0(round(mean(s$temperatura, na.rm=T),2)," °C"), 
+         icon = "fa-temperature-three-quarters",color = "hotpink")
+```
+
 Noticias {.storyboard data-icon="fa-newspaper"}
 ===
   
@@ -331,3 +428,46 @@ Noticias {.storyboard data-icon="fa-newspaper"}
 ### APROBACIÓN DEL ACUERDO MERESE ANTE EL MINAM
 
 ![](TIME_LINE/F4.png)
+
+### FORO SOBRE MERESE HÍDRICOS EN MOQUEGUA: UN DIÁLOGO ENRIQUECEDOR ENTRE EXPERTOS Y COMUNIDAD
+
+![](http://drive.google.com/uc?export=view&id=18S-3kGyFOD9LTeHbyXJi7y6imGW3MqKk)
+
+***
+
+**3 de agosto del 2023,** se participó conjuntamente con otros líderes y especialistas en un evento organizado por SUNASS, Forest Trends, UNAM y Southern Perú. A fin de dar a conocer y compartir experiencias con los participantes el equipo MRSE-H de la EPS Ilo S.A. participó en calidad de panelista, ponente y dando información en un módulo educativo.
+
+
+### EPS ILO REALIZÓ PASANTÍA PARA FORTALECER CAPACIDADES SOBRE LOS MRSE - H
+
+![](http://drive.google.com/uc?export=view&id=1II43voiaVCvZ-vInwUBEbGlhK48S-zeY)
+
+***
+
+**18 de setiembre del 2023,** EPS Ilo S.A. participó en pasantía a SEDAPAR los dias 4, 5 y 6 de setiembre fin de conocer el trabajo que se viene realizando en su MRSE-H y el tipo de sistema de tratamiento de agua. Los conocimientos y consejos adquiridos servirán para mejorar en el trabajo que se viene realizando.
+
+### EPS ILO PARTICIPÓ EN LA FERIA CIENTÍFICO-TECNOLÓGICA DEL AGUA Y SOSTENIBILIDAD AMBIENTAL "EXPO AGUA 2023"
+
+![](http://drive.google.com/uc?export=view&id=1vC_TsiR_qtQgYNkQ7SclSpxVRkIwsbiC)
+
+***
+
+**17 de octubre,** EPS ILO S.A. fue parte de las actividades del Expo Agua 2023, la novena edición de un evento nacional que busca el encuentro de soluciones tecnológicas, científicas y de servicios para lograr reducir las brechas existentes en términos de sostenibilidad del pais.
+
+
+### EPS ILO S.A. REALIZÓ EL WEBINAR "UNA PÁGINA PARA EL MRSE"
+
+![](http://drive.google.com/uc?export=view&id=1YMv3x5QpIegIeYYIw2CChEXKSc2F8mOh)
+
+***
+
+**25 de octubre,** como parte de los planes del MRSE-H de la EPS ILO S.A. se realizó el lanzamiento virtual (webinar) titulado "Una página para el MRSE" un espacio que buscó dar a conocer las bondades de que un MRSE-H posea una página web para ordenar, procesar y dar a conocer sus datos de monitoreo hidrológico al público en general.
+
+### EPS ILO S.A. PARTICIPÓ en el Encuentro Nacional de Merese Hidrico: PERÚ MERESE
+
+![](http://drive.google.com/uc?export=view&id=1egOcd-6zaCRIP6E5kwWYxSYq34WQVAfk)
+
+***
+
+**20 de octubre,** EPS Ilo S.A. Participó en el Encuentro Nacional de Merese Hidrico: PERÚ MERESE, evento organizado en la ciudad de Arequipa que tuvo una duración del 18 al 20 de octubre, se contó con la participación de muchos actores relacionados al cambio climático y sostenibilidad hídrica. En esta oportunidad el MRSE-H de la EPS Ilo S.A. dió a conocer los logros y retos que se presentan en su área de intervención a fin de que otros puedan aprender de esta experiencia.
+
