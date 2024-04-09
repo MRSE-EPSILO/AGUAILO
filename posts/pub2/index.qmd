@@ -1,0 +1,10 @@
+---
+title: "El equipo MRSE-H realiza charlas de sensibilización acerca de los MRSE-H y su importancia en la conservación y recuperación de los ecosistemas"
+author: "Equipo MRSE-H"
+date: "2022-11-01"
+categories: [news, 2022, noviembre]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+El equipo encargado de los MRSE-H está llevando a cabo una serie de charlas de sensibilización sobre la importancia de los mecanismos en la conservación y recuperación de los ecosistemas. Estas charlas buscan informar a la comunidad sobre la relevancia de los MRSE-H y cómo contribuyen a proteger nuestros recursos hídricos y garantizar un entorno saludable para las generaciones futuras. Mediante estas actividades educativas, se busca involucrar activamente a la población en la protección de los ecosistemas locales y fomentar una cultura de cuidado ambiental.

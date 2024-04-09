@@ -1,0 +1,138 @@
+---
+title: "Sobre la página"
+editor: source
+format: 
+  dashboard:
+    orientation: columns
+---
+
+<!-- quarto publish gh-pages -->
+
+## Column {width="25%"}
+
+[Bienvenida a esta plataforma de acceso público]{style="color:darkblue;font-weight:bold;"}
+
+**EPS Ilo S.A.** realiza implementación del Plan de Intervención los MRSE en la Comunidad Campesina de Asana con la finalidad de conservación y recuperación de los Servicios Ecosistémicos Hídricos.
+
+***Equipo MRSE*** <br><br>
+
+*Disfruta del siguente video informativo:*<br>
+
+{{< video https://youtu.be/FqETSuNF4ks aspect-ratio="4x3" >}}
+
+## Column {width="75%"}
+
+#### Imágenes destacadas
+
+::: contenedor-imagen
+<img src="fondo2.jpg" alt="Imagen 1"/> <img src="fondo3.jpg" alt="Imagen 2"/> <img src="fondo4.jpg" alt="Imagen 3"/>
+:::
+
+<!-- Agrega botones para avanzar y retroceder -->
+
+<!-- <boton id="anterior"> -->
+
+<!-- Anterior -->
+
+<!-- </boton> -->
+
+<!-- <boton id="siguiente"> -->
+
+<!-- Siguiente -->
+
+<!-- </boton> -->
+
+```{=html}
+<style>
+/* Estilos para el contenedor de la transición */
+
+.contenedor-imagen {
+    width: 100%;
+    height: 620px;
+    position: relative;
+    overflow: hidden;
+    }
+
+/* Estilos para las imágenes */
+.contenedor-imagen img {
+    width: 100%;
+    height: auto;
+    position: 
+    absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    }
+
+/* Estilo para mostrar la primera imagen */
+.contenedor-imagen img:first-child {
+    opacity: 1;
+    }
+
+ /* Estilo para las imágenes anteriores */
+ .image-previous {
+    opacity: 0.5;
+    left: -100%;
+    }
+
+/* Estilos para los botones */
+boton {
+  margin: 0;
+  padding: 10px 20px;/* Aumentamos el padding para un aspecto más moderno */
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo con transparencia */
+  color: #fff; /* Color de texto blanco */
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Efecto de transición */
+  outline: none; /* Quitamos el borde al hacer clic */
+}
+
+boton:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Cambio de color al pasar el mouse */
+}
+
+#anterior {
+    left: 10px; /* Ajusta la posición horizontal del botón "Anterior" */
+        }
+
+#siguiente {
+    right: 10px; /* Ajusta la posición horizontal del botón "Siguiente" */
+    }
+</style>
+```
+```{=html}
+<script>
+var currentImage = 0;
+var images = document.querySelectorAll('.contenedor-imagen img');
+var anteriorboton = document.getElementById('anterior');
+var siguienteboton = document.getElementById('siguiente');
+
+// Función para avanzar a la siguiente imagen
+function avanzar() {
+  images[currentImage].classList.add('image-previous');
+  images[currentImage].style.opacity = 0;
+  currentImage = (currentImage + 1) % images.length;
+  images[currentImage].style.opacity = 1;
+  images[currentImage].classList.remove('image-previous');
+}
+
+// Función para retroceder a la imagen anterior
+function retroceder() {
+  images[currentImage].classList.add('image-previous');
+  images[currentImage].style.opacity = 0;
+  currentImage = (currentImage - 1 + images.length) % images.length;
+  images[currentImage].style.opacity = 1;
+  images[currentImage].classList.remove('image-previous');
+}
+
+// Cambia la imagen automáticamente cada 6 segundos
+setInterval(avanzar, 6000);
+
+</script>
+```
+> Fotografías destacadas

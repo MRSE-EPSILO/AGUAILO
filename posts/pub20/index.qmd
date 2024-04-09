@@ -1,0 +1,12 @@
+---
+title: "Descarga de Datos de la Estación Pluviométrica: Contribuyendo a una Gestión del Agua más Efectiva"
+author: "Equipo MRSE-H"
+date: "2023-12-01"
+categories: [news, 2023, diciembre]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+El equipo MRSE-H de EPS ILO continua con sus labores periódicas de descarga de datos de la estación pluviométrica, como parte de su compromiso con la gestión sostenible del agua. Estas actividades incluyeron no solo la descarga de datos, sino también el mantenimiento y limpieza regular del equipo.
+
+En esta tarea, el equipo cuenta con la colaboración de un comunero de Asana “Victoriano”, quien desempeña el papel de guardián del equipo. La información obtenida de la estación pluviométrica proporciona datos precisos sobre la precipitación, lo cual es vital para una mejor toma de decisiones en el área de intervención. Mencionarles que en esta pagina se pueden descargar la información para fines que consideren.

@@ -1,0 +1,35 @@
+project:
+  type: website
+website:
+  # page-footer:
+  #   left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+  # margin-header: suscribe.html
+  # cookie-consent:
+  #   type: express
+  #   style: headline
+  #   palette: dark
+  back-to-top-navigation: true
+  google-analytics:
+    tracking-id: "G-444BCYE4CQ"
+    anonymize-ip: true
+  title: "MRSE-H"
+  favicon: iconoxd.png
+  navbar:
+    logo: logo_eps.png
+    collapse-below: sm
+    right:
+      - Presentación.qmd
+      - Datos de monitoreo.qmd
+      - noticias.qmd
+      - icon: github
+        href: https://github.com/Bryan1qr/MRSE-web-dev/
+      - icon: twitter
+        href: https://twitter.com
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+editor: visual
+

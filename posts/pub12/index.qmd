@@ -1,0 +1,10 @@
+---
+title: "EPS ILO comparte experiencias en EXPOAGUA durante la Jornada MERESE 2023"
+author: "Equipo MRSE-H"
+date: "2023-10-06"
+categories: [news, 2023, octubre]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+EPS ILO tuvo el honor de participar en EXPOAGUA durante la Jornada MERESE 2023, bajo el lema "Experiencias para impulsar y escalar su implementación en el Perú". En este importante evento, EPS ILO compartió sus experiencias en la implementación del MRSE-H el cual estuvo a cargo de la Gerente General CPC Solange Agramonte, destacando el compromiso con la gestión sostenible del agua. La participación de EPS ILO fue posible gracias a la invitación realizada por el Ministerio del Ambiente del Perú (MINAM) y Aquafondo, quienes promueven y difunden prácticas sostenibles y responsables con el medio ambiente en nuestro país. Esta participación refuerza el compromiso de EPS ILO con la gestión responsable del agua y el cuidado del medio ambiente a través de los MRSE-H.

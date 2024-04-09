@@ -1,0 +1,12 @@
+---
+title: "Construcción de la Primera Qocha Natural en Asana"
+author: "Equipo MRSE-H"
+date: "2023-11-21"
+categories: [news, 2023, noviembre]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+Se culminó la construcción de la primera qocha natural en la zona. Este logro fue posible gracias a la participación activa de los comuneros de Asana y la EPS ILO.
+
+La qocha natural proporcionará almacenamiento de agua para la comunidad, infiltración y recarga hídrica de la subcuenca de Asana. La culminación de la construcción de la primera qocha natural es un testimonio del compromiso y la colaboración entre EPS ILO y la comunidad de Asana en la conservación y recuperación de los servicios ecosistemicos hídricos.

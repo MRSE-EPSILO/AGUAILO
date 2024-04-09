@@ -1,0 +1,14 @@
+---
+title: "Visita Técnica del Equipo MRSE-H a la Cuenca Locumba: Avanzando en el Diseño de los MRSE-H"
+author: "Equipo MRSE-H"
+date: "2024-02-01"
+categories: [news, febrero, 2024]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+En febrero de 2024, el Equipo MRSE-H de EPS ILO, en conjunto con la Gerencia General y la Gerencia de Operaciones, llevó a cabo una visita técnica a la cuenca Locumba como parte del proceso de diseño de los Mecanismos de Retribución por Servicios Ecosistémicos Hídricos (MRSE-H).
+
+Durante esta visita se identificaron el estado de los ecosistemas y la participación de las comunidades locales.
+
+La sinergia de colaboración e integración de las gerencias garantiza una participación activa para la implementación de los MRSE-H y a las futuras acciones que se viene programando con asistencia de SUNASS. La visita técnica a la cuenca Locumba representa un paso importante en la culminación del diseño de los MRSE-H.

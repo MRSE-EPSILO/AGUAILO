@@ -1,0 +1,10 @@
+---
+title: "Visita al Área de Intervención del MRSE-H de EPS ILO"
+author: "Equipo MRSE-H"
+date: "2024-01-01"
+categories: [news, 2023, enero]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+El equipo MRSE-H de EPS ILO se unió a representantes de SUNASS y Forest Trends en una visita al área de intervención de la EPS en la microcuenca de Asana. El propósito de esta visita fue verificar los trabajos realizados hasta la fecha. Además, se identificaron áreas potenciales para la construcción de nueva infraestructura natural, con el fin de continuar fortaleciendo la gestión sostenible del agua en la región.

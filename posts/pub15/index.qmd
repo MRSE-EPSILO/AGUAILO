@@ -1,0 +1,12 @@
+---
+title: "EPS ILO participa en el Encuentro Nacional de MRSE-H organizado por SEDAPAR"
+author: "Equipo MRSE-H"
+date: "2023-10-15"
+categories: [news, 2023, octubre]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+EPS ILO partició en el Encuentro Nacional de MRSE-H, organizado por SEDAPAR. Este evento proporcionó una oportunidad para compartir las experiencias que EPS ILO ha estado implementando con los Mecanismos de Retribución por Servicios Ecosistémicos Hídricos.
+
+Durante el encuentro, se generó un enriquecedor intercambio de experiencias entre diferentes actores involucrados a nivel nacional. EPS ILO pudo destacar sus logros, desafíos y aprendizajes en la implementación de los MRSE-H. EPS ILO sigue comprometida con el intercambio de mejores prácticas y la colaboración con otras instituciones a fin de la conservación y recuperación de los SEH.

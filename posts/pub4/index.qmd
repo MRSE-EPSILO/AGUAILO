@@ -1,0 +1,10 @@
+---
+title: "EPS ILO realiza la primera instalación de estación pluviométrica en subcuenca de Asana para fortalecer el MRSE-H"
+author: "Equipo MRSE-H"
+date: "2023-03-02"
+categories: [asana, marzo, 2023]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+EPS ILO ha dado un paso significativo en cumplimiento con el Plan de Intervención del MRSE-H al instalar la primera estación pluviométrica en la subcuenca de Asana. Esta iniciativa, forma parte del componente "Generación de información hidrológica“, inicio funcionamiento desde el 2 de febrero de 2023, recopilando datos de precipitación que serán fundamentales para una toma de decisiones. La Gerente General CPC Solange Agramonte, y el Gerente de Operaciones Ing. Adhemar Villena Carpio, demostraron su compromiso con el MRSE-H al verificar la instalación de la estación en colaboración con la Junta Directiva de la comunidad de Asana. Esta acción conjunta refleja el esfuerzo conjunto entre la EPS ILO y la comunidad local para fortalecer la gestión de los recursos hídricos y avanzar hacia un futuro más sostenible.

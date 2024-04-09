@@ -1,0 +1,12 @@
+---
+title: "EPS ILO comparte experiencias en el I Encuentro de MRSE Hídricos de la Región Moquegua"
+author: "Equipo MRSE-H"
+date: "2023-08-05"
+categories: [news, 2023, agosto]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+EPS ILO compartió sus avances y desafíos en la implementación de los Mecanismos de Retribución por Servicios Ecosistémicos Hídricos (MRSE) en el "I Encuentro de los MRSE de la Región Moquegua", organizado por la ODS Moquegua (SUNASS). El evento se llevó a cabo los días 3 y 4 de agosto en la Universidad Nacional de Moquegua (UNAM). La Gerente de EPS Ilo, CPC Solange Agramonte Flores, tuvo una destacada participación como panelista, donde resaltó los avances, aprendizajes y desafíos de los MRSE-H. Además, el equipo MRSE-H tuvo una participación activa en la feria informativa del evento. La participación de EPS ILO en este encuentro regional subraya su compromiso con la promoción en la implementación de los MRSE-H en la región de Moquegua.
+
+[Para ir a la noticia fuente clic aquí](https://mail.epsilo.com.pe/articulo/eps-ilo-compartio-avances-y-desafios-de-la-implementacion-de-los-mrse-hidrico)

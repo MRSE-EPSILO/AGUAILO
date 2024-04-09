@@ -1,0 +1,235 @@
+---
+title: "Monitoreo hidrológico"
+editor: source
+format: 
+  dashboard:
+    orientation: columns
+---
+
+```{r}
+#| title: Base de datos iris
+#| warning: false
+#| message: false
+#| include: false
+library(leaflet)
+library(tidyverse)
+library(plotly)
+```
+
+## Column {.tabset width="65%"}
+
+
+```{r}
+#| echo: false
+#| title: "Año 2023"
+#| warning: false
+#| message: false
+#### PREPARACIÓN DE LAS BASES DE DATOS:
+# Carga de la base de datos:
+df <- read.csv("data_marzo")
+
+df$date <- as.POSIXct(
+  paste(df$date, df$hora, sep = " "),
+  format = "%Y-%m-%d %H:%M")
+
+df$hora <- NULL
+
+# Últimos datos descargados:
+descargado <- read.csv("n5.csv", skip = 2,header = F)[-1]
+names(descargado) <- c("date", "pp")
+descargado$date <- as.POSIXct(
+  descargado$date, format = "%Y/%m/%d %H:%M")
+
+# Unión de datasets
+df2 <- rbind(df, descargado)
+
+# Conversión a datos diarios:
+
+df3 <- df2
+df3$fecha <- format(df2$date, format = "%Y")
+
+df2023 <- df3 %>% filter(fecha == 2023) %>% 
+  mutate(date0 = as.Date(date, format = "%Y-%m-%d"),
+         date1 = format(date, format = "%Y-%m"),
+         date2 = format(date, format = "%d")) %>% 
+  reframe(pp = sum(pp, na.rm = T), .by = c(date1,date2))
+
+df2024 <- df3 %>% filter(fecha == 2024) %>% 
+  mutate(date0 = as.Date(date, format = "%Y-%m-%d"),
+         date1 = format(date, format = "%Y-%m"),
+         date2 = format(date, format = "%d")) %>% 
+  reframe(pp = sum(pp, na.rm = T), .by = c(date1,date2))
+
+
+## Gráfico de barras:
+df4 <- df2023
+names(df4) <- c("fecha1","fecha3", "Precipitacion")
+m2 <- df4 %>% ggplot(aes(x=factor(fecha3),y=Precipitacion))+
+  geom_bar(stat="identity",fill="darkblue", position = )+
+  labs(x="Fecha",y="Precipitación (mm)", title = "Datos diarios de precipitación (mm)") + 
+  theme_minimal() + theme(plot.title = element_text(size = 14,
+    face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12,
+    face = "italic", hjust = 0.5),
+    legend.position = "none",
+    strip.text.x = element_text(colour = "white",face = "bold"),
+    strip.background = element_rect(
+     color="#3182BD", fill="#3182BD",
+     size=1.5, linetype="solid"),
+    axis.title = element_text(size = 8),
+    axis.text.x = element_text(size = 8,
+        angle = 90)) +
+  facet_wrap(~fecha1,ncol=2)
+ggplotly(p=m2)
+```
+
+
+```{r}
+#| echo: false
+#| title: "Año 2024"
+#| padding: 0px
+#| warning: false
+#| message: false
+
+df5 <- df2024
+names(df5) <- c("fecha1","fecha3", "Precipitacion")
+m3 <- df5 %>% ggplot(aes(x=factor(fecha3),
+                         y=Precipitacion))+
+  geom_bar(stat="identity",fill="darkblue", position = )+
+  labs(x="Fecha",y="Precipitación (mm)",
+       title = "Datos diarios de precipitación (mm)") + 
+  theme_minimal() + theme(plot.title = element_text(size = 14,
+    face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12,
+    face = "italic", hjust = 0.5),
+    legend.position = "none",
+    strip.text.x = element_text(colour = "white",face = "bold"),
+    strip.background = element_rect(
+     color="#3182BD", fill="#3182BD",
+     size=1.5, linetype="solid"),
+    axis.title = element_text(size = 8),
+    axis.text.x = element_text(size = 8,
+        angle = 90)) +
+  facet_wrap(~fecha1,ncol=2)
+
+ggplotly(p=m3)
+```
+
+
+```{r}
+#| message: false
+#| warning: false
+#| include: false
+#| title: "Descarga de datos"
+
+m10 <- df3 %>% ggplot(
+  aes(x = date, y = pp)) +
+  geom_line(color = "darkblue") +
+  scale_x_datetime(
+    date_labels = "%Y") +
+  labs(x = "Fechas",
+       y = "Precipitación (mm)",
+       title = "Datos históricos (cada 10')") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold",
+                                  hjust = 0.5))
+library(patchwork)
+
+pdf("reporte.pdf", compress = FALSE,height = 9)
+
+# png("reporte.png", res = 500,
+#     units = "cm", width = 15, height = 20)
+
+(m2/(m3/m10)) + 
+  plot_layout(
+    heights = unit(c(8, 2),
+                   c('cm', 'null'))) +
+  plot_annotation(
+    title = "Datos de precipitación 2023-2024",
+    theme = theme(
+      plot.title = element_text(
+        size = 18, face = "bold", hjust = 0.5)))
+dev.off()
+
+# Adecuando las tablas de datos para descarga:
+data.frame(
+  fecha = paste(df2023$date1,
+                df2023$date2, sep = "-"),
+  precip = df2023$pp) %>%
+  openxlsx::write.xlsx("2023.xlsx")
+
+dfn2024 <- data.frame(
+  fecha = paste(df2024$date1,
+                df2024$date2, sep = "-"),
+  precip = df2024$pp) %>% 
+   openxlsx::write.xlsx("2024.xlsx")
+```
+
+```{r}
+#| title: NDVI
+#| warning: false
+#| message: false
+#| echo: false
+knitr::include_graphics("_site/mapas.gif")
+```
+
+## Column {width="35%"}
+
+```{r}
+#| title: Mapa web del MRSE
+#| echo: false
+leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat=-17.062286,lng=-70.520806,
+             popup = paste(sep="<br>","<b>Lugar:</b>","Estación pluviométrica","<b>Latitud:</b>","-17.062286","<b>Longitud:</b>"
+                           ,"-70.520806")) %>%
+  addCircleMarkers(lat=c(-17.062286,-17.630402),
+                   lng=c(-70.520806,-71.335089), radius = 40,
+                   color="deepskyblue") %>%
+  addMarkers(lat=-17.630402,lng=-71.335089,
+             popup = paste(sep="<br>","<b>Lugar:</b>","EPS ILO S.A.","<b>Latitud:</b>","-17.630402","<b>Longitud:</b>",
+                           "-71.19908"))
+```
+
+Descarga de datos
+
+| Descripción                             | Links de descarga          |
+|-----------------------------------------|----------------------------|
+| Datos diarios de precipitación del 2023 | [2023.xlsx](2023.xlsx)     |
+| Datos diarios de precipitación del 2024 | [2024.xlsx](2024.xlsx)     |
+| Gráficos de valores diarios mensuales   | [Reporte.pdf](Reporte.pdf) |
+
+
+
+<!-- ```{r} -->
+<!-- #| content: valuebox -->
+<!-- #| title: "Inicio de registro" -->
+
+<!-- list( -->
+<!--   icon = "droplet", -->
+<!--   color = "primary", -->
+<!--   value = as.character(min(df2$date)) -->
+<!-- ) -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- #| content: valuebox -->
+<!-- #| title: "Último dato descarcargado" -->
+
+<!-- list( -->
+<!--   icon = "droplet-half", -->
+<!--   color = "primary", -->
+<!--   value = as.character(max(df2$date)) -->
+<!-- ) -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- #| content: valuebox -->
+<!-- #| title: "Precipitación acumulada total" -->
+
+<!-- list( -->
+<!--   icon = "droplet-fill", -->
+<!--   color = "primary", -->
+<!--   value = paste(sum(df2$pp), "mm") -->
+<!-- ) -->
+<!-- ``` -->

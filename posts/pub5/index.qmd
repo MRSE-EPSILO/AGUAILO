@@ -1,0 +1,10 @@
+---
+title: "EPS ILO lidera el I Encuentro de la Plataforma de Buena Gobernanza en Mecanismos de Retribución por Servicios Ecosistémicos Hídricos"
+author: "Equipo MRSE-H"
+date: "2023-04-14"
+categories: [news,PBG, abril, 2023]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+El equipo MRSE-H de EPS ILO organizó el primer encuentro de la Plataforma de Buena Gobernanza sobre los Mecanismos de Retribución por Servicios Ecosistémicos Hídricos de la EPS Ilo. Este evento reunió a diversos actores comprometidos con la promoción del cuidado de los ecosistemas hídricos y la sostenibilidad del servicio de agua potable. En la reunión participaron representantes clave del Ministerio del Ambiente (MINAM), SUNASS, SERNANP, Proyecto Especial Pasto Grande (PERPG), Municipalidad Provincial de Ilo, SENAMHI y la comunidad campesina de Asana. Durante el encuentro, se discutió la importancia de la plataforma y se delinearon planes para su implementación, con el objetivo de fomentar la participación de un mayor número de actores en la protección y gestión sostenible de los recursos hídricos en la región.

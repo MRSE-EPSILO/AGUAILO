@@ -1,0 +1,14 @@
+---
+title: "EPS ILO fortalece capacidades de MRSE Hídricos con pasantía en SEDAPAR"
+author: "Equipo MRSE-H"
+date: "2023-09-14"
+categories: [news, 2023, setiembre]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+Como parte de su compromiso con el fortalecimiento de capacidades, la EPS ILO junto con comuneros de Asana, llevó a cabo una pasantía en la empresa SEDAPAR. Esta visita tuvo como objetivo aprender de la exitosa implementación de los Mecanismos de Retribución por Servicios Ecosistémicos (MRSE) por parte de SEDAPAR.
+
+La pasantía fue posible gracias a la colaboración del proyecto de infraestructura natural para la seguridad hídrica de Forest Trends, DESCOSUR y SEDAPAR. Durante la visita, el equipo de EPS ILO y los comuneros de Asana tuvieron la oportunidad de compartir experiencias con SEDAPAR en la gestión de MRSE-H, lo que contribuirá al fortalecimiento de capacidades y a una mejor implementación de los MRSE-H que viene ejecutando la EPS ILO.
+
+[Mira la publicación fuente aquí:](https://prensaregional.pe/la-prensa-regional-jueves-14-de-setiembre-de-2023/)

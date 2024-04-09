@@ -1,0 +1,15 @@
+---
+title: "Noticias"
+lang: es
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: true
+  filter-ui: true
+page-layout: full
+title-block-banner: true
+---
+
+Aquí te presentamos los eventos más destacados en los que se vió involucrado este **MRSE-H.** Al hacer clic en cualquiera de nuestras noticias se abrirá una pestaña que te brindará mas detalles.

@@ -1,0 +1,12 @@
+---
+title: "EPS ILO es reconocida por el Ministerio del Ambiente por su compromiso con los Servicios Ecosistémicos Hídricos"
+author: "Equipo MRSE-H"
+date: "2023-08-01"
+categories: [news, 2023, agosto]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+La EPS ILO ha sido reconocida con la Resolución Directoral N°003-2023-MINAM/VMDERN/DGEFA por el Ministerio del Ambiente, en virtud de su compromiso con la conservación y sostenibilidad de los Servicios Ecosistémicos Hídricos. Este reconocimiento se enmarca en el cumplimiento de la Ley N°30215, la cual establece los Mecanismos de Retribución por Servicios Ecosistémicos. La EPS ILO figura en el Registro Único de MRSE del MINAM, lo que refleja el compromiso para la protección de los recursos hídricos. Específicamente, se reconoce el Acuerdo establecido entre la EPS ILO y la Comunidad Campesina de Asana, el cual establece acciones conjuntas para la conservación, recuperación y sostenibilidad de los servicios ecosistémicos hídricos en la subcuenca de Asana.
+
+[Revisa la resolución aquí](https://www.gob.pe/institucion/minam/normas-legales/4483674-0003-2023-minam-vmdern-dgefa)

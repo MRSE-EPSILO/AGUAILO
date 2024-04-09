@@ -1,0 +1,10 @@
+---
+title: "Avanzan los trabajos de construcción de infraestructura natural en Asana"
+author: "Equipo MRSE-H"
+date: "2023-10-01"
+categories: [news, 2023, octubre]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+Durante el mes de octubre de 2023, el equipo MRSE-H de EPS ILO realizó trabajos de campo junto a los comuneros de Asana para llevar a cabo la ejecución de la construcción de una qocha natural y canales rusticos con función de amuna. Estas estructuras no solo contribuyen a la captación y almacenamiento de agua, sino que también promueven la infiltración y recarga de acuíferos, mejorando así la disponibilidad de agua para la comunidad y el medio ambiente.

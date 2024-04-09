@@ -1,0 +1,10 @@
+---
+title: "Encuentro entre el Equipo MRSE-H de EPS ILO y la Junta Directiva de la Comunidad de Asana"
+author: "Equipo MRSE-H"
+date: "2023-05-25"
+categories: [news, mayo, 2023]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+Como parte del compromiso de sensibilización del Equipo MRSE-H de EPS ILO, se convocó a la junta directiva de la Comunidad de Asana en las instalaciones de la EPS. El propósito principal de esta reunión fue informar a los miembros de la junta sobre los avances de las acciones de intervención en curso y las proyecciones para la conservación de los servicios ecosistémicos hídricos. Este encuentro refleja el compromiso de EPS ILO de involucrar activamente a las comunidades locales en las iniciativas del MRSE-H, promoviendo una colaboración efectiva con la comunidad.

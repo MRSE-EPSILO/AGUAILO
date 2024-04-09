@@ -1,0 +1,10 @@
+---
+title: "Lanzamiento de la Plataforma Web MRSE-H de EPS ILO"
+author: "Equipo MRSE-H"
+date: "2023-10-11"
+categories: [news, 2023, octubre]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+El equipo MRSE-H de EPS ILO realizó el lanzamiento de la plataforma web MRSE-H, a través de un webinar que contó con la participación de 3 panelistas representantes de SENAMHI, SUNASS, FOREST TRENDS y más de 120 asistentes. Esta plataforma representa un paso significativo en la generación y difusión de información. Durante el evento, se compartieron las experiencias del proceso de implementación del MRSE-H, destacando los logros alcanzados hasta la fecha. Además, se presentó la visualización del proceso de información generada por la estación pluviométrica, así como los planes para la adquisición de próximas estaciones que fortalecerán el Registro de Monitoreo Hidrológico. La plataforma web MRSE-H ofrece una herramienta para acceder a datos actualizados que como MRSE-H se viene recopilando, facilitando la toma de decisiones y promoviendo la participación de la comunidad.
