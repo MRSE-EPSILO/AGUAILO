@@ -170,7 +170,7 @@ dfn2024 <- data.frame(
 #| warning: false
 #| message: false
 #| echo: false
-knitr::include_graphics("_site/mapas.gif")
+knitr::include_graphics("mapas.gif")
 ```
 
 ## Column {width="35%"}

@@ -12,13 +12,13 @@ format:
 
 [Bienvenida a esta plataforma de acceso público]{style="color:darkblue;font-weight:bold;"}
 
-**EPS Ilo S.A.** realiza implementación del Plan de Intervención los MRSE en la Comunidad Campesina de Asana con la finalidad de conservación y recuperación de los Servicios Ecosistémicos Hídricos.
+**EPS Ilo S.A.** realiza implementación del Plan de Intervención los MRSE Hídricos en la Comunidad Campesina de Asana con la finalidad de conservación y recuperación de los Servicios Ecosistémicos Hídricos.
 
 ***Equipo MRSE*** <br><br>
 
 *Disfruta del siguente video informativo:*<br>
 
-{{< video https://youtu.be/FqETSuNF4ks aspect-ratio="4x3" >}}
+{{< video https://youtu.be/dPtul-u6LZM?si=i1ZX8jNG8QADr5ja aspect-ratio="4x3" >}}
 
 ## Column {width="75%"}
 

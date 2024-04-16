@@ -1,0 +1,16 @@
+---
+title: "Visita Técnica del Equipo MRSE-H a la Cuenca Locumba: Avanzando en el Diseño de los MRSE-H"
+author: "Equipo MRSE-H"
+date: "2024-03-01"
+categories: [news, marzo, 2024]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+En marzo de 2024, el Equipo MRSE-H tuvo el honor de participar activamente en la Asamblea de la Iniciativa de Monitoreo Hidrológico en Ecosistemas Andinos (iMHEA). Esta red reúne a diversas organizaciones con el objetivo de ampliar y fortalecer el conocimiento sobre la hidrología en los ecosistemas andinos, contribuyendo así a una mejor toma de decisiones en la gestión integral de los recursos hídricos en la región andina.
+
+La participación del Equipo MRSE-H de EPS ILO fue fundamental para el avance del sistema de monitoreo hidrológico en el área de intervención de Asana, para comprender y gestionar los recursos hídricos en nuestra región.
+
+Seguimos comprometidos con el desarrollo y la mejora continua de nuestras prácticas en materia de monitoreo hidrológico, con el propósito de contribuir al bienestar y la sostenibilidad de nuestros ecosistemas andinos.
+
+#MRSEH #iMHEA2024 #RecursosHídricos
