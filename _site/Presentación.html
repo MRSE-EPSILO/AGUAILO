@@ -171,9 +171,9 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <span style="color:darkblue;font-weight:bold;">Bienvenida a esta plataforma de acceso público</span>
-<p><strong>EPS Ilo S.A.</strong> realiza implementación del Plan de Intervención los MRSE en la Comunidad Campesina de Asana con la finalidad de conservación y recuperación de los Servicios Ecosistémicos Hídricos.</p>
-<p><strong><em>Equipo MRSE</em></strong> <br><br></p>
-<p><em>Disfruta del siguente video informativo:</em><br></p>
+<p><strong>EPS Ilo S.A.</strong> realiza implementación de los mecanismos de retribución por servicios ecosistémicos hídricos con la finalidad realizar acciones de conservación y recuperación de los Servicios Ecosistémicos Hídricos.</p>
+<p><strong><em>Equipo MRSE-H</em></strong> <br><br></p>
+<p><em>Disfruta del siguiente video informativo:</em><br></p>
 <div class="quarto-video ratio ratio-4x3 html-fill-item html-fill-container"><iframe data-external="1" src="https://www.youtube.com/embed/dPtul-u6LZM?si=i1ZX8jNG8QADr5ja" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -188,15 +188,8 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="contenedor-imagen html-fill-item html-fill-container">
-<p><img src="fondo2.jpg" alt="Imagen 1"> <img src="fondo3.jpg" alt="Imagen 2"> <img src="fondo4.jpg" alt="Imagen 3"></p>
+<p><img src="fondo2.jpg" alt="Imagen 1"> <img src="fondo3.jpg" alt="Imagen 2"> <img src="fondo4.jpg" alt="Imagen 3"> <img src="fondo5.jpeg" alt="Imagen 4"> <img src="fondo6.jpeg" alt="Imagen 5"></p>
 </div>
-<!-- Agrega botones para avanzar y retroceder -->
-<!-- <boton id="anterior"> -->
-<!-- Anterior -->
-<!-- </boton> -->
-<!-- <boton id="siguiente"> -->
-<!-- Siguiente -->
-<!-- </boton> -->
 <style>
 /* Estilos para el contenedor de la transición */
 
@@ -230,34 +223,8 @@ grid-auto-rows: minmax(0, 1fr);">
     left: -100%;
     }
 
-/* Estilos para los botones */
-boton {
-  margin: 0;
-  padding: 10px 20px;/* Aumentamos el padding para un aspecto más moderno */
-  font-size: 16px;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo con transparencia */
-  color: #fff; /* Color de texto blanco */
-  border: none;
-  border-radius: 5px; /* Bordes redondeados */
-  transition: background-color 0.3s, color 0.3s; /* Efecto de transición */
-  outline: none; /* Quitamos el borde al hacer clic */
-}
-
-boton:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Cambio de color al pasar el mouse */
-}
-
-#anterior {
-    left: 10px; /* Ajusta la posición horizontal del botón "Anterior" */
-        }
-
-#siguiente {
-    right: 10px; /* Ajusta la posición horizontal del botón "Siguiente" */
-    }
 </style>
+
 <script>
 var currentImage = 0;
 var images = document.querySelectorAll('.contenedor-imagen img');
@@ -282,13 +249,13 @@ function retroceder() {
   images[currentImage].classList.remove('image-previous');
 }
 
-// Cambia la imagen automáticamente cada 6 segundos
-setInterval(avanzar, 6000);
+// Cambia la imagen automáticamente cada 3 segundos
+setInterval(avanzar, 3000);
 
 </script>
 </div>
 <div class="card-footer">
-<p>Fotografías destacadas</p>
+<p>FOTOGRAFIAS DESTACADAS</p>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
     <template>Expand</template>
