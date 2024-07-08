@@ -188,7 +188,7 @@ img, svg {
   }
   
   .services .icon-box .icon i {
-	color: #fff;
+	color: "white";
 	font-size: 60px;
   }
   
@@ -265,9 +265,9 @@ section {
 	opacity: 1;
 	padding-bottom: 45px;
   }
-  
+
   section .container {
-	background: gray;
+	background: #2c3f50;
 	padding: 30px;
   }
   
