@@ -10,7 +10,7 @@ website:
   #   palette: dark
   back-to-top-navigation: true
   google-analytics:
-    tracking-id: "G-444BCYE4CQ"
+    tracking-id: "G-2QCYBRDYFQ"
     anonymize-ip: true
   title: "MRSE-H"
   favicon: iconoxd.png
@@ -21,8 +21,8 @@ website:
       - Presentación.qmd
       - Datos de monitoreo.qmd
       - noticias.qmd
-      - icon: github
-        href: https://github.com/Bryan1qr/MRSE-web-dev/
+      - icon: instagram
+        href: https://www.instagram.com/mrse.epsilo/
       - icon: twitter
         href: https://twitter.com
 format:
