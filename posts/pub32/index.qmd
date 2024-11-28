@@ -1,14 +1,12 @@
 ---
-title: "Trabajo en equipo para la conservación hídrica en la microcuenca Asana"
+title: "Feria “Aprendiendo de los Desastres del Pasado”"
 author: "Equipo MRSE-H"
-date: "2024-06-13"
-categories: [news, junio, 2024]
+date: "2024-08-14"
+categories: [news, agosto, 2024]
 ---
 
 [![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
 
-Realizamos trabajos de campo en la microcuenca Asana con el objetivo de identificar potenciales lugares para la construcción de qochas, en colaboración con DESCOSUR, comuneros de Asana y la SUNASS Moquegua.
+Estuvimos presentes en la Feria Informativa y de Sensibilización en la Plaza de Armas. Este evento fue una oportunidad para sensibilizar a la comunidad sobre la importancia de los mecanismos de retribución por servicios ecosistémicos y reforzar el compromiso de EPS Ilo en la gestión de riesgos y la promoción de prácticas sostenibles. ¡Aprender del pasado para proteger nuestro futuro!
 
-Como EPS Ilo, a través de los MRSEH, trabajamos por la conservación de los recursos hídricos.
-
-***#ConservaciónHídrica #EPSIlo #MRSEH #DESCOSUR #ODS #Asana #Qochas #TrabajoDeCampo #Sostenibilidad***
+***#ConservaciónHídrica #EPSIlo #MRSEH #Sostenibilidad #GestiónDeRiesgos #PrácticasSostenibles***

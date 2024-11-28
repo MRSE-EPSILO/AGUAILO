@@ -1,0 +1,15 @@
+1. Ir a la pestaña terminal del proyecto
+
+2. colocar el siguiente comando:
+git add .
+
+luego este comando:
+
+git commit -m "MRSE2024"
+
+Finalmente este comando:
+
+git push -u origin main
+
+finalmente:
+quarto publish gh-pages

@@ -1,14 +1,14 @@
 ---
-title: "Trabajo en equipo para la conservación hídrica en la microcuenca Asana"
+title: "Fortaleciendo el Enfoque de Género en la Gestión del Agua"
 author: "Equipo MRSE-H"
-date: "2024-06-13"
-categories: [news, junio, 2024]
+date: "2024-07-19"
+categories: [news, julio, 2024]
 ---
 
 [![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
 
-Realizamos trabajos de campo en la microcuenca Asana con el objetivo de identificar potenciales lugares para la construcción de qochas, en colaboración con DESCOSUR, comuneros de Asana y la SUNASS Moquegua.
+El equipo MRSEH participó en el taller "Incorporación del Enfoque de Género en Intervenciones en Infraestructura Natural y Gestión de los Recursos Hídricos", organizado por el proyecto NIWS con el apoyo de USAID y el Gobierno de Canadá. Este taller abordó conceptos clave para identificar brechas de género en la gestión del agua y explorar formas de aplicarlos en proyectos de inversión pública.
 
-Como EPS Ilo, a través de los MRSEH, trabajamos por la conservación de los recursos hídricos.
+¡Seguimos impulsando una gestión inclusiva y equitativa en nuestros proyectos!
 
-***#ConservaciónHídrica #EPSIlo #MRSEH #DESCOSUR #ODS #Asana #Qochas #TrabajoDeCampo #Sostenibilidad***
+***#EPSIlo #MRSEH #EnfoqueDeGenero***
