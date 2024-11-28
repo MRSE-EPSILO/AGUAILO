@@ -35,13 +35,15 @@ df$date <- as.POSIXct(
 df$hora <- NULL
 
 # Últimos datos descargados:
-descargado <- read.csv("n5.csv", skip = 2,header = F)[-1]
+descargado <- read.csv("03.10.24hobo.csv", skip = 2,header = F)
 names(descargado) <- c("date", "pp")
 descargado$date <- as.POSIXct(
-  descargado$date, format = "%Y/%m/%d %H:%M")
+  descargado$date, format = "%Y-%m-%d %H:%M")
+
 
 # Unión de datasets
-df2 <- rbind(df, descargado)
+df2 <- rbind(df, descargado) %>% 
+  mutate(pp = if_else(pp >=5, 0, pp))
 
 # Conversión a datos diarios:
 

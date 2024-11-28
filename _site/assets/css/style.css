@@ -1,0 +1,339 @@
+/*--------------------------------------------------------------
+# BODY
+--------------------------------------------------------------*/
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-color: black;
+	color: black;
+	position: relative;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	margin: 0;
+}
+
+
+
+body::before {
+	background-attachment: fixed;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	background: #fff url("../img/bg.png") top right no-repeat;
+	background-size: cover;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 100vh;
+	z-index: -1;
+}
+
+h4 {
+	color: #fff!important;
+}
+
+/*--------------------------------------------------------------
+# HEADER
+--------------------------------------------------------------*/
+
+.header-logo1 {
+	flex-basis: 20%;
+}
+
+.header-logo2 {
+	flex-basis: 20%;
+}
+
+.header-logo1 img {
+    width: 60%; 
+    height: auto;
+}
+
+.header-logo2 img {
+    width: 90%; 
+    height: auto;
+}
+
+.header-text {
+	flex-basis: 60%;
+	padding-left: 15px;
+	text-align: center;
+}
+
+img, svg {
+	vertical-align: baseline!important;
+}
+
+
+#header {
+	transition: ease-in-out 0.3s;
+	position: relative;
+	display: flex;
+	align-items: center;
+	z-index: 997;
+	overflow-y: auto;
+	background: #0073bae7;
+	height: 80px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+    padding-left: 30px;
+    overflow: hidden;
+}
+
+#header.header-top h1 {
+    margin-right: auto;
+    font-size: 1.4rem;
+  	line-height: 0.3;
+	font-weight: 700;
+	font-family: "Poppins", sans-serif;
+}
+
+#header.header-top h2 {
+    margin-right: auto;
+    font-size: 14px;
+  	line-height: 1;
+	font-weight: 400;
+	font-family: "Poppins", sans-serif;
+}
+
+#header a {
+    text-decoration: none;
+    color:black
+}
+
+#header.header-top .container {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+@media (max-width: 1152px) {
+    #header.header-top {
+      height: 80px;
+    }
+  
+    #header.header-top h1 {
+      font-size: 16px;
+	  line-height: 1.2rem;
+	  text-align: center;
+	  flex-basis: 100%;
+
+    }
+
+	.header-logo {
+		flex-basis: 30%;
+		display: none;
+		flex-basis: 0%;
+	}
+
+	#header {
+		padding-left: 0;
+	}
+
+	.header-text {
+		flex-basis: 100%;
+		padding-left: 15px;
+	}
+	.foot {
+		background-color: transparent;
+		color: #ffffff;
+		text-align: center;
+		font-size: 15px!important;
+		padding: 0px 0!important;
+		position: relative!important;
+		padding-top: 1160px!important;
+		padding-left: 0%!important;
+	}
+
+  }
+
+
+
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+	text-align: center;
+	background: rgba(204, 204, 204, 0.1);
+	padding: 80px 20px;
+	transition: all ease-in-out 0.3s;
+  }
+  
+  .services .icon-box .icon {
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+	background: #0073ba;
+	border-radius: 5px;
+	transition: all 0.3s ease-out 0s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
+	transform-style: preserve-3d;
+  }
+  
+  .services .icon-box .icon i {
+	color: "white";
+	font-size: 60px;
+  }
+  
+  .services .icon-box .icon::before {
+	position: absolute;
+	content: "";
+	left: -8px;
+	top: -8px;
+	height: 100%;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.15);
+	border-radius: 5px;
+	transition: all 0.3s ease-out 0s;
+	transform: translateZ(-1px);
+  }
+  
+  .services .icon-box h4 {
+	font-weight: 300;
+	margin-bottom: 1.4rem;
+	font-size: 24px;
+  }
+  
+  .services .icon-box h4 a {
+	color: #fff;
+  }
+  
+  .services .icon-box p {
+	line-height: 24px;
+	font-size: 14px;
+	margin-bottom: 0;
+  }
+  
+  .services .icon-box:hover {
+	background: #0073ba;
+	border-color: #0073ba;
+  }
+  
+  .services .icon-box:hover .icon {
+	background: #fff;
+  }
+  
+  .services .icon-box:hover .icon i {
+	color: #0073ba;
+  }
+  
+  .services .icon-box:hover .icon::before {
+	background: #7ad3ff;
+  }
+  
+  .services .icon-box:hover h4 a,
+  .services .icon-box:hover p {
+	color: black;
+  }
+  
+
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	top: 140px;
+	bottom: 100%;
+	opacity: 0;
+	transition: ease-in-out 0.4s;
+	z-index: 2;
+  }
+  
+  section.section-show {
+	top: 100px;
+	bottom: auto;
+	opacity: 1;
+	padding-bottom: 45px;
+  }
+
+  section .container {
+	background: #2c3f50;
+	padding: 30px;
+  }
+  
+  @media (max-width: 768px) {
+	section {
+	  top: 120px;
+	}
+  
+	section.section-show {
+	  top: 80px;
+	}
+  }
+  
+  .section-title h2 {
+	font-size: 12px;
+	font-weight: 400;
+	padding: 0;
+	line-height: 1px;
+	margin: 0 0 20px 0;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: black;
+	font-family: "Poppins", sans-serif;
+  }
+  
+  .section-title h2::after {
+	content: "";
+	width: 120px;
+	height: 1px;
+	display: inline-block;
+	background: #0073ba;
+	margin: 4px 10px;
+  }
+  
+  .section-title p {
+	margin: 0;
+	margin: -15px 0 15px 0;
+	font-size: 1.4rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-family: "Poppins", sans-serif;
+	color: black;
+  }
+  
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.foot {
+    background-color: transparent; 
+    color: #ffffff; 
+    text-align: center; 
+    padding: 20px 0;
+    font-size: 10px; 
+	position: fixed;
+	padding-top: 44%;
+	padding-left: 80%;
+}
+
+
+/*--------------------------------------------------------------
+# Phone view
+--------------------------------------------------------------*/
+@media (max-width: 900px) {
+.section-title h2::after {
+   display: none!important;
+}
+}

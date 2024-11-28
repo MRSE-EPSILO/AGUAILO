@@ -2,7 +2,6 @@
 title: ""
 ---
 
-
 ```{=html}
 
 <head>
@@ -21,13 +20,15 @@ title: ""
     <div class="container">
 
       <div class="section-title">
-        <h2>Información del MRSE-H al alcance de todos</h2>
-        <p>Secciones destacadas de la página</p>
+        
+        <h2 style="color: white;">Información del MRSE-H al alcance de todos</h2>
+        
+        <p style="color: white;">Secciones destacadas de la página</p>
       </div>
 
       <div class="row">
         <div class="col-lg-4 col-md-6 d-noflex align-items-stretch">
-          <a href="about.qmd" style="text-decoration: none; color: inherit;">
+          <a href="noticias.qmd" style="text-decoration: none; color: inherit;">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-news"></i></div>
               <h4>Sección de noticias</h4>
@@ -37,7 +38,7 @@ title: ""
         </div>
 
         <div class="col-lg-4 col-md-6 d-noflex align-items-stretch">
-          <a href="about.qmd" style="text-decoration: none; color: inherit;">
+          <a href="Datos de monitoreo.qmd" style="text-decoration: none; color: inherit;">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-droplet"></i></div>
               <h4> Datos de precipitación</h4>
@@ -54,4 +55,3 @@ title: ""
         <p>Créditos fotografía de fondo: Estudios MRSE-H</p>
     </div>
 ```
-

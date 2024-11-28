@@ -1,0 +1,14 @@
+---
+title: "¡Celebremos el Día Mundial del Medio Ambiente!"
+author: "Equipo MRSE-H"
+date: "2024-06-05"
+categories: [news, junio, 2024]
+---
+
+[![](thumbnail.jpg)](javascript:void(window.open('thumbnail.jpg','','width=600,height=400').onunload%20=%20function()%7Bwindow.history.back();%7D))
+
+Este **5 de junio**, EPS Ilo y el equipo de MRSEH participaron activamente en la "XVI Marcha de Sensibilización Ambiental" bajo el lema **"Nuestras tierras, nuestro futuro"** en la ciudad de Ilo.
+
+Cuidar nuestro planeta es cuidar nuestro futuro. Cada acción cuenta. Hagamos de cada día una oportunidad para proteger y preservar la naturaleza. 🌱💧
+
+***#DíaMundialDelMedioAmbiente #EPSIlo #MRSEH #SensibilizaciónAmbiental #NuestrasTierrasNuestroFuturo***
