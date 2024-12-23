@@ -1,0 +1,108 @@
+---
+title: "Monitoreo"
+editor: source
+execute: 
+  message: false
+  warning: false
+  echo: false
+format: 
+  dashboard:
+    orientation: columns
+---
+
+```{r}
+#| include: false
+library(highcharter)
+library(tidyverse)
+```
+
+
+## xd
+
+```{r}
+#| title: "Estación 01"
+
+df <- read.csv("data_marzo")
+
+df$date <- as.POSIXct(
+  paste(df$date, df$hora, sep = " "),
+  format = "%Y-%m-%d %H:%M")
+
+df$hora <- NULL
+
+# Últimos datos descargados:
+descargado <- read.csv("03.10.24hobo.csv", skip = 2,header = F)
+names(descargado) <- c("date", "pp")
+descargado$date <- as.POSIXct(
+  descargado$date, format = "%Y-%m-%d %H:%M")
+
+
+# Unión de datasets
+df2 <- rbind(df, descargado) %>% 
+  mutate(pp = if_else(pp >=5, 0, pp))
+
+highchart() %>%
+  hc_chart(zoomType = "x") %>% 
+  hc_add_series(
+    data = list_parse2(
+      df2 %>% mutate(
+        date = as.numeric(date) * 1000) %>% 
+        select(date, pp)
+    ), 
+    type = "line", 
+    name = "Precipitación",
+    color = "#6BAED6"  # Cambia la línea a color celeste
+  )  %>%
+  hc_xAxis(type = "datetime") %>% 
+  hc_exporting(
+    enabled = TRUE,
+    buttons = list(
+      contextButton = list(
+        menuItems = c("downloadPNG",
+                      "downloadCSV",
+                      "downloadXLS",
+                      "downloadPDF"))))
+```
+
+
+## xd2
+
+```{r}
+#| title: "Estación 02"
+
+df2 <- df2 %>% 
+  mutate(temperatura = runif(n(), min = 15, max = 20))
+
+
+highchart() %>%
+  hc_chart(zoomType = "x") %>% 
+  hc_add_series(
+    data = list_parse2(
+      df2 %>% mutate(
+        date = as.numeric(date) * 1000) %>% 
+        select(date, pp)
+    ), 
+    type = "line", 
+    name = "Precipitación",
+    color = "#6BAED6"  # Cambia la línea a color celeste
+  ) %>%
+  hc_add_series(
+    data = list_parse2(
+      df2 %>% mutate(
+        date = as.numeric(date) * 1000) %>% 
+        select(date, temperatura)
+    ), 
+    type = "line", 
+    name = "Temperatura",
+    color = "#E31A1C"  # Cambia la línea a color rojo
+  ) %>%
+  hc_xAxis(type = "datetime") %>% 
+  hc_exporting(
+    enabled = TRUE,
+    buttons = list(
+      contextButton = list(
+        menuItems = c("downloadPNG",
+                      "downloadCSV",
+                      "downloadXLS",
+                      "downloadPDF"))))
+```
