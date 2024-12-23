@@ -22,80 +22,43 @@ library(tidyverse)
 ```{r}
 #| title: "Estación 01"
 
-df <- read.csv("data_marzo")
+b <- read.csv("data_marzo.csv") %>% 
+  select(-hora) %>% 
+  mutate(temperatura = runif(n(), min = 15, max = 20),
+         dia = as.Date(date, format = "%Y-%m-%d")) %>% 
+  summarise(pp = sum(pp, na.rm = T),
+            temp = mean(temperatura, na.rm = T), .by = dia) 
 
-df$date <- as.POSIXct(
-  paste(df$date, df$hora, sep = " "),
-  format = "%Y-%m-%d %H:%M")
-
-df$hora <- NULL
-
-# Últimos datos descargados:
-descargado <- read.csv("03.10.24hobo.csv", skip = 2,header = F)
-names(descargado) <- c("date", "pp")
-descargado$date <- as.POSIXct(
-  descargado$date, format = "%Y-%m-%d %H:%M")
-
-
-# Unión de datasets
-df2 <- rbind(df, descargado) %>% 
-  mutate(pp = if_else(pp >=5, 0, pp))
-
-highchart() %>%
-  hc_chart(zoomType = "x") %>% 
-  hc_add_series(
-    data = list_parse2(
-      df2 %>% mutate(
-        date = as.numeric(date) * 1000) %>% 
-        select(date, pp)
-    ), 
-    type = "line", 
-    name = "Precipitación",
-    color = "#6BAED6"  # Cambia la línea a color celeste
-  )  %>%
-  hc_xAxis(type = "datetime") %>% 
-  hc_exporting(
-    enabled = TRUE,
-    buttons = list(
-      contextButton = list(
-        menuItems = c("downloadPNG",
-                      "downloadCSV",
-                      "downloadXLS",
-                      "downloadPDF"))))
+b %>% 
+  hchart(., type = "column", 
+         hcaes(x = dia, 
+               y = pp), color = "#154c79", name = "Precipitación") %>% 
+  hc_title(
+    text = "<b>Estación 01</b> - Precipitación diaria (mm)",
+    margin = 20,
+    align = "left",
+    style = list(color = "#154c79", useHTML = TRUE))
 ```
 
-
-## xd2
 
 ```{r}
 #| title: "Estación 02"
 
-df2 <- df2 %>% 
-  mutate(temperatura = runif(n(), min = 15, max = 20))
-
+b2 <- b %>% 
+  mutate(dia = as.POSIXct(paste(dia, "01:00:00"), format = "%Y-%m-%d %H:%M:%S"),
+         dia = as.numeric(dia)*1000)
 
 highchart() %>%
-  hc_chart(zoomType = "x") %>% 
   hc_add_series(
-    data = list_parse2(
-      df2 %>% mutate(
-        date = as.numeric(date) * 1000) %>% 
-        select(date, pp)
-    ), 
-    type = "line", 
+    data = list_parse2(b2 %>% select(dia, pp)), 
+    type = "column", 
     name = "Precipitación",
-    color = "#6BAED6"  # Cambia la línea a color celeste
-  ) %>%
+    color = "#154c79") %>% 
   hc_add_series(
-    data = list_parse2(
-      df2 %>% mutate(
-        date = as.numeric(date) * 1000) %>% 
-        select(date, temperatura)
-    ), 
+    data = list_parse2(b2 %>% select(dia, temp)), 
     type = "line", 
     name = "Temperatura",
-    color = "#E31A1C"  # Cambia la línea a color rojo
-  ) %>%
+    color = "hotpink") %>% 
   hc_xAxis(type = "datetime") %>% 
   hc_exporting(
     enabled = TRUE,
@@ -106,3 +69,48 @@ highchart() %>%
                       "downloadXLS",
                       "downloadPDF"))))
 ```
+
+## xddd
+
+```{r}
+#| title: "Estación 03"
+
+b <- read.csv("data_marzo.csv") %>% 
+  select(-hora) %>% 
+  mutate(temperatura = runif(n(), min = 15, max = 20),
+         dia = as.Date(date, format = "%Y-%m-%d")) %>% 
+  summarise(pp = sum(pp, na.rm = T),
+            temp = mean(temperatura, na.rm = T), .by = dia) 
+
+b %>% 
+  hchart(., type = "column", 
+         hcaes(x = dia, 
+               y = pp), color = "#154c79", name = "Precipitación") %>% 
+  hc_title(
+    text = "<b>Estación 03</b> - Precipitación diaria (mm)",
+    margin = 20,
+    align = "left",
+    style = list(color = "#154c79", useHTML = TRUE))
+```
+
+```{r}
+#| title: "Estación 04"
+
+b <- read.csv("data_marzo.csv") %>% 
+  select(-hora) %>% 
+  mutate(temperatura = runif(n(), min = 15, max = 20),
+         dia = as.Date(date, format = "%Y-%m-%d")) %>% 
+  summarise(pp = sum(pp, na.rm = T),
+            temp = mean(temperatura, na.rm = T), .by = dia) 
+
+b %>% 
+  hchart(., type = "column", 
+         hcaes(x = dia, 
+               y = pp), color = "#154c79", name = "Precipitación") %>% 
+  hc_title(
+    text = "<b>Estación 04</b> - Precipitación diaria (mm)",
+    margin = 20,
+    align = "left",
+    style = list(color = "#154c79", useHTML = TRUE))
+```
+
