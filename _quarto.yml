@@ -12,14 +12,15 @@ website:
   google-analytics:
     tracking-id: "G-2QCYBRDYFQ"
     anonymize-ip: true
-  title: "MRSE-H"
+  title: ""
   favicon: iconoxd.png
   navbar:
-    logo: logo_eps.png
+    logo: logo_eps2.png
     collapse-below: sm
     right:
       - Presentación.qmd
-      - Datos de monitoreo.qmd
+      # - Datos de monitoreo.qmd
+      - monitoreo_beta.qmd
       - noticias.qmd
       - icon: instagram
         href: https://www.instagram.com/mrse.epsilo/
@@ -27,9 +28,7 @@ website:
         href: https://twitter.com
 format:
   html:
-    theme:
-      light: flatly
-      dark: darkly
+    theme: flatly
     css: styles.css
 editor: visual
 
