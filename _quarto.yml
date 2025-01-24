@@ -19,7 +19,7 @@ website:
     collapse-below: sm
     right:
       - Presentación.qmd
-      - Datos de monitoreo.qmd
+      # - Datos de monitoreo.qmd
       - monitoreo_beta.qmd
       - noticias.qmd
       - icon: instagram

@@ -8,13 +8,14 @@ execute:
 format: 
   dashboard:
     orientation: columns
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
 #| include: false
 library(highcharter)
 library(tidyverse)
-library(openair)
 ```
 
 
@@ -23,44 +24,51 @@ library(openair)
 ```{r}
 #| title: "Estación 01"
 
-b <- read.csv("data_marzo.csv") %>% 
-  select(-hora) %>% 
-  mutate(temperatura = runif(n(), min = 15, max = 20),
-         dia = as.Date(date, format = "%Y-%m-%d")) %>% 
-  summarise(pp = sum(pp, na.rm = T),
-            temp = mean(temperatura, na.rm = T), .by = dia) 
-
-b %>% 
-  hchart(., type = "column", 
-         hcaes(x = dia, 
-               y = pp), color = "#154c79", name = "Precipitación") %>% 
-  hc_title(
-    text = "<b>Estación 01</b> - Precipitación diaria (mm)",
-    margin = 20,
-    align = "left",
-    style = list(color = "#154c79", useHTML = TRUE))
+source("Scripts/Estacion1.R")
+estacion1("datasets/Victoriano_estación.csv")
 ```
 
 
 ```{r}
 #| title: "Estación 02"
 
-b2 <- b %>% 
-  mutate(dia = as.POSIXct(paste(dia, "01:00:00"), format = "%Y-%m-%d %H:%M:%S"),
-         dia = as.numeric(dia)*1000)
+b <- read.csv("datasets/Qocha_estación.csv") %>% 
+  select(c(1,2,4)) %>% 
+  rename_at(vars(1,2,3), ~c("date", "temp", "pp")) %>% 
+  mutate(date = as.POSIXct(date, format = "%Y/%m/%d %H:%M"))
+
+
+b1 <- b %>% 
+  mutate(date = as.Date(date)) %>% 
+  summarise(temp = mean(temp, na.rm = TRUE), .by = "date")
+
+
+b1$pp <- b %>% filter(!is.na(pp)) %>% select(pp) %>% pull()
+
+b1 <- b1 %>% 
+  mutate(date = as.POSIXct(paste(date, "01:00:00"),
+                           format = "%Y-%m-%d %H:%M:%S"),
+         date = as.numeric(date)*1000)
 
 highchart() %>%
   hc_add_series(
-    data = list_parse2(b2 %>% select(dia, pp)), 
+    data = list_parse2(b1 %>% select(date, pp)), 
     type = "column", 
     name = "Precipitación",
-    color = "#154c79") %>% 
+    color = "#154c79",
+    tooltip = list(valueDecimals = 1)) %>% 
   hc_add_series(
-    data = list_parse2(b2 %>% select(dia, temp)), 
+    data = list_parse2(b1 %>% select(date, temp)), 
     type = "line", 
     name = "Temperatura",
-    color = "hotpink") %>% 
+    color = "hotpink",
+    tooltip = list(valueDecimals = 1)) %>% 
   hc_xAxis(type = "datetime") %>% 
+  hc_title(
+      text = "<b>Estación 02</b> - Precipitación diaria (mm)",
+      margin = 20,
+      align = "left",
+      style = list(color = "#154c79", useHTML = TRUE)) %>% 
   hc_exporting(
     enabled = TRUE,
     buttons = list(
@@ -76,42 +84,107 @@ highchart() %>%
 ```{r}
 #| title: "Estación 03"
 
-b <- read.csv("data_marzo.csv") %>% 
-  select(-hora) %>% 
-  mutate(temperatura = runif(n(), min = 15, max = 20),
-         dia = as.Date(date, format = "%Y-%m-%d")) %>% 
-  summarise(pp = sum(pp, na.rm = T),
-            temp = mean(temperatura, na.rm = T), .by = dia) 
+c <- read.csv("datasets/Preciball.csv", skip = 1, header = F) %>% 
+  select(c(1,3,7)) %>% 
+  rename_at(vars(1,2,3), ~c("date", "pp", "temp")) %>% 
+  mutate(date = as.POSIXct(date, format = "%d/%m/%Y %H:%M"))
 
-b %>% 
-  hchart(., type = "column", 
-         hcaes(x = dia, 
-               y = pp), color = "#154c79", name = "Precipitación") %>% 
+c$date <- seq(from = as.POSIXct("2025-01-10 12:20:00"),
+              to = as.POSIXct("2025-01-21 09:40:00"), by = "5 mins")
+
+
+c <- c %>% mutate(date = as.Date(date)) %>% 
+  summarise(temp = mean(temp, na.rm = TRUE),
+            pp = sum(pp, na.rm = TRUE),.by = "date")
+
+c <- c %>% 
+  mutate(date = as.POSIXct(paste(date, "01:00:00"),
+                           format = "%Y-%m-%d %H:%M:%S"),
+         date = as.numeric(date)*1000)
+
+
+highchart() %>%
+  hc_add_series(
+    data = list_parse2(c %>% select(date, pp)), 
+    type = "column", 
+    name = "Precipitación",
+    color = "#154c79",
+    tooltip = list(valueDecimals = 1)) %>% 
+  hc_add_series(
+    data = list_parse2(c %>% select(date, temp)), 
+    type = "line", 
+    name = "Temperatura",
+    color = "hotpink",
+    tooltip = list(valueDecimals = 1)) %>% 
+  hc_xAxis(type = "datetime") %>% 
   hc_title(
-    text = "<b>Estación 03</b> - Precipitación diaria (mm)",
-    margin = 20,
-    align = "left",
-    style = list(color = "#154c79", useHTML = TRUE))
+      text = "<b>Estación 03</b> - Precipitación diaria (mm)",
+      margin = 20,
+      align = "left",
+      style = list(color = "#154c79", useHTML = TRUE)) %>% 
+  hc_exporting(
+    enabled = TRUE,
+    buttons = list(
+      contextButton = list(
+        menuItems = c("downloadPNG",
+                      "downloadCSV",
+                      "downloadXLS",
+                      "downloadPDF"))))
 ```
 
 ```{r}
-#| title: "Estación 04"
+#| title: "Estaciones hidrométricas"
 
-b <- read.csv("data_marzo.csv") %>% 
-  select(-hora) %>% 
-  mutate(temperatura = runif(n(), min = 15, max = 20),
-         dia = as.Date(date, format = "%Y-%m-%d")) %>% 
-  summarise(pp = sum(pp, na.rm = T),
-            temp = mean(temperatura, na.rm = T), .by = dia) 
+library(tidyverse)
+library(lubridate)
 
-b %>% 
-  hchart(., type = "column", 
-         hcaes(x = dia, 
-               y = pp), color = "#154c79", name = "Precipitación") %>% 
+# Definir un rango de fechas (por ejemplo, desde 2025-01-01 hasta 2025-01-10)
+fechas <- seq(ymd("2025-01-01"), ymd("2025-01-21"), by = "days")
+
+# Generar datos aleatorios para las dos columnas de hidrometría (por ejemplo, mediciones en metros)
+set.seed(123)  # Para hacer los resultados reproducibles
+hidrometria_punto1 <- runif(length(fechas), min = 0, max = 10)  # Valores aleatorios para el primer punto de aforo
+hidrometria_punto2 <- runif(length(fechas), min = 0, max = 10)  # Valores aleatorios para el segundo punto de aforo
+
+# Crear la tabla con las fechas y las dos columnas de hidrometría
+tabla_hidrometria <- tibble(
+  fecha = fechas,
+  hidrometria_punto1 = round(hidrometria_punto1, 2),  # Redondear a 2 decimales
+  hidrometria_punto2 = round(hidrometria_punto2, 2)   # Redondear a 2 decimales
+)
+
+
+tabla_hidrometria <- tabla_hidrometria %>% 
+  mutate(fecha = as.POSIXct(paste(fecha, "01:00:00"),
+                           format = "%Y-%m-%d %H:%M:%S"),
+         fecha = as.numeric(fecha)*1000)
+
+highchart() %>%
+  hc_add_series(
+    data = list_parse2(tabla_hidrometria %>% select(fecha, hidrometria_punto1)), 
+    type = "line", 
+    name = "Punto 2",
+    color = "#154c79",
+    tooltip = list(valueDecimals = 1)) %>% 
+  hc_add_series(
+    data = list_parse2(tabla_hidrometria %>% select(fecha, hidrometria_punto2)), 
+    type = "line", 
+    name = "Punto 1",
+    color = "hotpink",
+    tooltip = list(valueDecimals = 1)) %>% 
+  hc_xAxis(type = "datetime") %>% 
   hc_title(
-    text = "<b>Estación 04</b> - Precipitación diaria (mm)",
-    margin = 20,
-    align = "left",
-    style = list(color = "#154c79", useHTML = TRUE))
+      text = "<b>Estaciones hidrométricas</b> - Niveles de agua (m)",
+      margin = 20,
+      align = "left",
+      style = list(color = "#154c79", useHTML = TRUE)) %>% 
+  hc_exporting(
+    enabled = TRUE,
+    buttons = list(
+      contextButton = list(
+        menuItems = c("downloadPNG",
+                      "downloadCSV",
+                      "downloadXLS",
+                      "downloadPDF"))))
 ```
 
