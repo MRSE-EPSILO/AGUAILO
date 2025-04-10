@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,18 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-dashboard/quarto-dashboard.js"></script>
-<script src="site_libs/quarto-dashboard/stickythead.js"></script>
-<script src="site_libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
-<script src="site_libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
-<script src="site_libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
-<script src="site_libs/quarto-dashboard/web-components.js" type="module"></script>
-<script src="site_libs/quarto-dashboard/components.js"></script>
-<link href="site_libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
+<link href="site_libs/bootstrap/bootstrap-f3c2ea88cadbcfb37ba28ffa2c97cfc1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -120,10 +112,37 @@ gtag('config', 'G-2QCYBRDYFQ', { 'anonymize_ip': true});
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="quarto-dashboard nav-fixed dashboard-fill">
-
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -143,10 +162,6 @@ gtag('config', 'G-2QCYBRDYFQ', { 'anonymize_ip': true});
   <li class="nav-item">
     <a class="nav-link" href="./Presentación.html"> 
 <span class="menu-text">Sobre la página</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Datos de monitoreo.html"> 
-<span class="menu-text">Monitoreo hidrológico</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./monitoreo_beta.html"> 
@@ -172,53 +187,41 @@ gtag('config', 'G-2QCYBRDYFQ', { 'anonymize_ip': true});
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-<header id="quarto-dashboard-header">
-<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
-  <div class="navbar-container container-fluid">
-    <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>    
-
-
-    <div class="navbar-brand-container">       
-
-      <div class="navbar-title">
-        <div class="navbar-title-text"><a href="#">Noticias</a></div>
-        
-        
-      </div>
-    </div>
-</div>
-</nav>
-</header></header>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Noticias</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(37)</span></div><div class="category" data-category="2022">2022 <span class="quarto-category-count">(3)</span></div><div class="category" data-category="2023">2023 <span class="quarto-category-count">(18)</span></div><div class="category" data-category="2024">2024 <span class="quarto-category-count">(16)</span></div><div class="category" data-category="PBG">PBG <span class="quarto-category-count">(1)</span></div><div class="category" data-category="abril">abril <span class="quarto-category-count">(3)</span></div><div class="category" data-category="agosto">agosto <span class="quarto-category-count">(3)</span></div><div class="category" data-category="asana">asana <span class="quarto-category-count">(1)</span></div><div class="category" data-category="diciembre">diciembre <span class="quarto-category-count">(2)</span></div><div class="category" data-category="enero">enero <span class="quarto-category-count">(2)</span></div><div class="category" data-category="febrero">febrero <span class="quarto-category-count">(2)</span></div><div class="category" data-category="julio">julio <span class="quarto-category-count">(3)</span></div><div class="category" data-category="junio">junio <span class="quarto-category-count">(2)</span></div><div class="category" data-category="marzo">marzo <span class="quarto-category-count">(2)</span></div><div class="category" data-category="mayo">mayo <span class="quarto-category-count">(2)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(35)</span></div><div class="category" data-category="noviembre">noviembre <span class="quarto-category-count">(5)</span></div><div class="category" data-category="octubre">octubre <span class="quarto-category-count">(7)</span></div><div class="category" data-category="setiembre">setiembre <span class="quarto-category-count">(4)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(37)</span></div><div class="category" data-category="MjAyMg==">2022 <span class="quarto-category-count">(3)</span></div><div class="category" data-category="MjAyMw==">2023 <span class="quarto-category-count">(18)</span></div><div class="category" data-category="MjAyNA==">2024 <span class="quarto-category-count">(16)</span></div><div class="category" data-category="UEJH">PBG <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YWJyaWw=">abril <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YWdvc3Rv">agosto <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YXNhbmE=">asana <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGljaWVtYnJl">diciembre <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZW5lcm8=">enero <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZmVicmVybw==">febrero <span class="quarto-category-count">(2)</span></div><div class="category" data-category="anVsaW8=">julio <span class="quarto-category-count">(3)</span></div><div class="category" data-category="anVuaW8=">junio <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bWFyem8=">marzo <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bWF5bw==">mayo <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(35)</span></div><div class="category" data-category="bm92aWVtYnJl">noviembre <span class="quarto-category-count">(5)</span></div><div class="category" data-category="b2N0dWJyZQ==">octubre <span class="quarto-category-count">(7)</span></div><div class="category" data-category="c2V0aWVtYnJl">setiembre <span class="quarto-category-count">(4)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
-<div class="bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
-<div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
+
+
+
+
 <p>Aquí te presentamos los eventos más destacados en los que se vió involucrado este <strong>MRSE-H.</strong> Al hacer clic en cualquiera de nuestras noticias se abrirá una pestaña que te brindará mas detalles.</p>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 
 
 
-<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
-
-</div>
-</div>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
@@ -247,10 +250,10 @@ gtag('config', 'G-2QCYBRDYFQ', { 'anonymize_ip': true});
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="news,noviembre,2024" data-listing-date-sort="1730869200000" data-listing-file-modified-sort="1737681870618" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="97">
+<div class="quarto-post image-right" data-index="0" data-categories="bmV3cyUyQ25vdmllbWJyZSUyQzIwMjQ=" data-listing-date-sort="1730869200000" data-listing-file-modified-sort="1744249673990" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="97">
 <div class="thumbnail">
 <p><a href="./posts/pub37/index.html" class="no-external"></a></p><a href="./posts/pub37/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub37/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub37\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub37/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -261,18 +264,18 @@ gtag('config', 'G-2QCYBRDYFQ', { 'anonymize_ip': true});
 <a href="./posts/pub37/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('noviembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bm92aWVtYnJl'); return false;">
 noviembre
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub37/index.html" class="no-external"></a>
+<a href="./posts/pub37/index.html" class="no-external">En el marco de los 10 años de la Ley de Mecanismos de Retribución por Servicios Ecosistémicos (MRSE), el Ministerio del Ambiente (MINAM) otorgó un reconocimiento a EPS Ilo…</a>
 </div>
 </div>
 <div class="metadata">
@@ -286,10 +289,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="news,octubre,2024" data-listing-date-sort="1729832400000" data-listing-file-modified-sort="1737681870617" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="58">
+<div class="quarto-post image-right" data-index="1" data-categories="bmV3cyUyQ29jdHVicmUlMkMyMDI0" data-listing-date-sort="1729832400000" data-listing-file-modified-sort="1744249673988" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="58">
 <div class="thumbnail">
 <p><a href="./posts/pub36/index.html" class="no-external"></a></p><a href="./posts/pub36/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub36/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub36\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub36/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -300,18 +303,18 @@ Equipo MRSE-H
 <a href="./posts/pub36/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('octubre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('b2N0dWJyZQ=='); return false;">
 octubre
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub36/index.html" class="no-external"></a>
+<a href="./posts/pub36/index.html" class="no-external">El 25 de octubre, EPS Ilo estuvo presente en el aniversario de la Comunidad Campesina de Asana, gracias a la invitación formal de su presidenta. Continuando con la…</a>
 </div>
 </div>
 <div class="metadata">
@@ -325,10 +328,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="news,octubre,2024" data-listing-date-sort="1729400400000" data-listing-file-modified-sort="1737681870616" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="52">
+<div class="quarto-post image-right" data-index="2" data-categories="bmV3cyUyQ29jdHVicmUlMkMyMDI0" data-listing-date-sort="1729400400000" data-listing-file-modified-sort="1744249673986" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="52">
 <div class="thumbnail">
 <p><a href="./posts/pub35/index.html" class="no-external"></a></p><a href="./posts/pub35/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub35/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub35\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub35/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -339,18 +342,18 @@ Equipo MRSE-H
 <a href="./posts/pub35/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('octubre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('b2N0dWJyZQ=='); return false;">
 octubre
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub35/index.html" class="no-external"></a>
+<a href="./posts/pub35/index.html" class="no-external">En el marco del aniversario de EPS Ilo, organizamos una feria itinerante en la que participó la Comunidad Campesina de Huanuara, compartiendo sus productos locales. Este…</a>
 </div>
 </div>
 <div class="metadata">
@@ -364,10 +367,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="news,setiembre,2024" data-listing-date-sort="1727672400000" data-listing-file-modified-sort="1737681870615" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
+<div class="quarto-post image-right" data-index="3" data-categories="bmV3cyUyQ3NldGllbWJyZSUyQzIwMjQ=" data-listing-date-sort="1727672400000" data-listing-file-modified-sort="1744249673981" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
 <div class="thumbnail">
 <p><a href="./posts/pub34/index.html" class="no-external"></a></p><a href="./posts/pub34/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub34/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub34\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub34/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -378,18 +381,18 @@ Equipo MRSE-H
 <a href="./posts/pub34/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('setiembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('c2V0aWVtYnJl'); return false;">
 setiembre
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub34/index.html" class="no-external"></a>
+<a href="./posts/pub34/index.html" class="no-external">En el marco de la campaña “CUIDANDO LAS FUENTES DE AGUA NATURAL, CUIDAS EL AGUA POTABLE”, recibimos a estudiantes de Ingeniería Ambiental de la Universidad Nacional de…</a>
 </div>
 </div>
 <div class="metadata">
@@ -403,10 +406,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="news,setiembre,2024" data-listing-date-sort="1726635600000" data-listing-file-modified-sort="1737681870613" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66">
+<div class="quarto-post image-right" data-index="4" data-categories="bmV3cyUyQ3NldGllbWJyZSUyQzIwMjQ=" data-listing-date-sort="1726635600000" data-listing-file-modified-sort="1744249673977" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66">
 <div class="thumbnail">
 <p><a href="./posts/pub33/index.html" class="no-external"></a></p><a href="./posts/pub33/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub33/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub33\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub33/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -417,18 +420,18 @@ Equipo MRSE-H
 <a href="./posts/pub33/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('setiembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('c2V0aWVtYnJl'); return false;">
 setiembre
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub33/index.html" class="no-external"></a>
+<a href="./posts/pub33/index.html" class="no-external">El 18 de septiembre se firmó un importante acuerdo entre EPS Ilo y la Comunidad Campesina de Huanuara, gracias al liderazgo de su presidenta, Sra. Betsy Escobar. Este…</a>
 </div>
 </div>
 <div class="metadata">
@@ -442,10 +445,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="news,agosto,2024" data-listing-date-sort="1723611600000" data-listing-file-modified-sort="1737681870612" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
+<div class="quarto-post image-right" data-index="5" data-categories="bmV3cyUyQ2Fnb3N0byUyQzIwMjQ=" data-listing-date-sort="1723611600000" data-listing-file-modified-sort="1744249673973" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
 <div class="thumbnail">
 <p><a href="./posts/pub32/index.html" class="no-external"></a></p><a href="./posts/pub32/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub32/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub32\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub32/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -456,18 +459,18 @@ Equipo MRSE-H
 <a href="./posts/pub32/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('agosto'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('YWdvc3Rv'); return false;">
 agosto
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub32/index.html" class="no-external"></a>
+<a href="./posts/pub32/index.html" class="no-external">Estuvimos presentes en la Feria Informativa y de Sensibilización en la Plaza de Armas. Este evento fue una oportunidad para sensibilizar a la comunidad sobre la importancia…</a>
 </div>
 </div>
 <div class="metadata">
@@ -481,10 +484,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="news,julio,2024" data-listing-date-sort="1721365200000" data-listing-file-modified-sort="1737681870612" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="74">
+<div class="quarto-post image-right" data-index="6" data-categories="bmV3cyUyQ2p1bGlvJTJDMjAyNA==" data-listing-date-sort="1721365200000" data-listing-file-modified-sort="1744249673972" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="74">
 <div class="thumbnail">
 <p><a href="./posts/pub31/index.html" class="no-external"></a></p><a href="./posts/pub31/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub31/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub31\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub31/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -495,18 +498,18 @@ Equipo MRSE-H
 <a href="./posts/pub31/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('julio'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('anVsaW8='); return false;">
 julio
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub31/index.html" class="no-external"></a>
+<a href="./posts/pub31/index.html" class="no-external">El equipo MRSEH participó en el taller “Incorporación del Enfoque de Género en Intervenciones en Infraestructura Natural y Gestión de los Recursos Hídricos”, organizado por…</a>
 </div>
 </div>
 <div class="metadata">
@@ -520,10 +523,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="news,julio,2024" data-listing-date-sort="1720155600000" data-listing-file-modified-sort="1737681870611" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="58">
+<div class="quarto-post image-right" data-index="7" data-categories="bmV3cyUyQ2p1bGlvJTJDMjAyNA==" data-listing-date-sort="1720155600000" data-listing-file-modified-sort="1744249673970" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="58">
 <div class="thumbnail">
 <p><a href="./posts/pub30/index.html" class="no-external"></a></p><a href="./posts/pub30/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub30/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub30\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub30/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -534,18 +537,18 @@ Equipo MRSE-H
 <a href="./posts/pub30/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('julio'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('anVsaW8='); return false;">
 julio
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub30/index.html" class="no-external"></a>
+<a href="./posts/pub30/index.html" class="no-external">El equipo MRSEH estuvo presente en la primera sesión de la Plataforma de Buena Gobernanza del Gobierno Regional, donde se declaró de interés regional la implementación de…</a>
 </div>
 </div>
 <div class="metadata">
@@ -559,10 +562,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="news,junio,2024" data-listing-date-sort="1718254800000" data-listing-file-modified-sort="1737681870610" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="54">
+<div class="quarto-post image-right" data-index="8" data-categories="bmV3cyUyQ2p1bmlvJTJDMjAyNA==" data-listing-date-sort="1718254800000" data-listing-file-modified-sort="1744249673967" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="54">
 <div class="thumbnail">
 <p><a href="./posts/pub29/index.html" class="no-external"></a></p><a href="./posts/pub29/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub29/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub29\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub29/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -573,18 +576,18 @@ Equipo MRSE-H
 <a href="./posts/pub29/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('junio'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('anVuaW8='); return false;">
 junio
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub29/index.html" class="no-external"></a>
+<a href="./posts/pub29/index.html" class="no-external">Realizamos trabajos de campo en la microcuenca Asana con el objetivo de identificar potenciales lugares para la construcción de qochas, en colaboración con DESCOSUR…</a>
 </div>
 </div>
 <div class="metadata">
@@ -598,10 +601,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="news,junio,2024" data-listing-date-sort="1717563600000" data-listing-file-modified-sort="1737681870609" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="58">
+<div class="quarto-post image-right" data-index="9" data-categories="bmV3cyUyQ2p1bmlvJTJDMjAyNA==" data-listing-date-sort="1717563600000" data-listing-file-modified-sort="1744249673964" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="58">
 <div class="thumbnail">
 <p><a href="./posts/pub28/index.html" class="no-external"></a></p><a href="./posts/pub28/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub28/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub28\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub28/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -612,18 +615,18 @@ Equipo MRSE-H
 <a href="./posts/pub28/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('junio'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('anVuaW8='); return false;">
 junio
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub28/index.html" class="no-external"></a>
+<a href="./posts/pub28/index.html" class="no-external">Este <strong>5 de junio</strong>, EPS Ilo y el equipo de MRSEH participaron activamente en la “XVI Marcha de Sensibilización Ambiental” bajo el lema <strong>“Nuestras tierras, nuestro futuro”</strong> en la…</a>
 </div>
 </div>
 <div class="metadata">
@@ -637,10 +640,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="news,mayo,2024" data-listing-date-sort="1715403600000" data-listing-file-modified-sort="1737681870608" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="145">
+<div class="quarto-post image-right" data-index="10" data-categories="bmV3cyUyQ21heW8lMkMyMDI0" data-listing-date-sort="1715403600000" data-listing-file-modified-sort="1744249673962" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="145">
 <div class="thumbnail">
 <p><a href="./posts/pub27/index.html" class="no-external"></a></p><a href="./posts/pub27/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub27/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub27\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub27/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -651,18 +654,18 @@ Equipo MRSE-H
 <a href="./posts/pub27/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('mayo'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bWF5bw=='); return false;">
 mayo
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub27/index.html" class="no-external"></a>
+<a href="./posts/pub27/index.html" class="no-external">Este 11 de mayo, nos unimos a la celebración mundial de las aves migratorias para resaltar la importancia de proteger y conservar estas especies tan especiales. En Asana…<em></em></a>
 </div>
 </div>
 <div class="metadata">
@@ -676,10 +679,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="news,abril,2024" data-listing-date-sort="1713848400000" data-listing-file-modified-sort="1737681870607" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="129">
+<div class="quarto-post image-right" data-index="11" data-categories="bmV3cyUyQ2FicmlsJTJDMjAyNA==" data-listing-date-sort="1713848400000" data-listing-file-modified-sort="1744249673958" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="129">
 <div class="thumbnail">
 <p><a href="./posts/pub26/index.html" class="no-external"></a></p><a href="./posts/pub26/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub26/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub26\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub26/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -690,18 +693,18 @@ Equipo MRSE-H
 <a href="./posts/pub26/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('abril'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('YWJyaWw='); return false;">
 abril
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub26/index.html" class="no-external"></a>
+<a href="./posts/pub26/index.html" class="no-external">Se realizó la primera evaluación del estado de conservación de los bofedales en Asana, área de intervención de los MRSE-H de la EPS Ilo.</a>
 </div>
 </div>
 <div class="metadata">
@@ -715,10 +718,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="news,marzo,2024" data-listing-date-sort="1710910800000" data-listing-file-modified-sort="1737681870606" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="134">
+<div class="quarto-post image-right" data-index="12" data-categories="bmV3cyUyQ21hcnpvJTJDMjAyNA==" data-listing-date-sort="1710910800000" data-listing-file-modified-sort="1744249673956" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="134">
 <div class="thumbnail">
 <p><a href="./posts/pub25/index.html" class="no-external"></a></p><a href="./posts/pub25/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub25/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub25\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub25/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -729,18 +732,18 @@ Equipo MRSE-H
 <a href="./posts/pub25/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('marzo'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bWFyem8='); return false;">
 marzo
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub25/index.html" class="no-external"></a>
+<a href="./posts/pub25/index.html" class="no-external">En marzo de 2024, el Equipo MRSE-H tuvo el honor de participar activamente en la Asamblea de la Iniciativa de Monitoreo Hidrológico en Ecosistemas Andinos (iMHEA). Esta red…</a>
 </div>
 </div>
 <div class="metadata">
@@ -754,10 +757,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="news,febrero,2024" data-listing-date-sort="1707800400000" data-listing-file-modified-sort="1737681870606" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="80">
+<div class="quarto-post image-right" data-index="13" data-categories="bmV3cyUyQ2ZlYnJlcm8lMkMyMDI0" data-listing-date-sort="1707800400000" data-listing-file-modified-sort="1744249673955" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="80">
 <div class="thumbnail">
 <p><a href="./posts/pub24/index.html" class="no-external"></a></p><a href="./posts/pub24/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub24/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub24\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub24/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -768,18 +771,18 @@ Equipo MRSE-H
 <a href="./posts/pub24/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('febrero'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('ZmVicmVybw=='); return false;">
 febrero
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub24/index.html" class="no-external"></a>
+<a href="./posts/pub24/index.html" class="no-external">El 13 de febrero la EPS ILO a través del MRSE-H se incorporó como socio a la red de la Iniciativa de Monitoreo Hidrológico en Ecosistemas Andinos (iMHEA), red de…</a>
 </div>
 </div>
 <div class="metadata">
@@ -793,10 +796,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="news,febrero,2024" data-listing-date-sort="1706763600000" data-listing-file-modified-sort="1737681870605" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="113">
+<div class="quarto-post image-right" data-index="14" data-categories="bmV3cyUyQ2ZlYnJlcm8lMkMyMDI0" data-listing-date-sort="1706763600000" data-listing-file-modified-sort="1744249673954" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="113">
 <div class="thumbnail">
 <p><a href="./posts/pub23/index.html" class="no-external"></a></p><a href="./posts/pub23/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub23/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub23\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub23/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -807,18 +810,18 @@ Equipo MRSE-H
 <a href="./posts/pub23/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('febrero'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('ZmVicmVybw=='); return false;">
 febrero
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub23/index.html" class="no-external"></a>
+<a href="./posts/pub23/index.html" class="no-external">En febrero de 2024, el Equipo MRSE-H de EPS ILO, en conjunto con la Gerencia General y la Gerencia de Operaciones, llevó a cabo una visita técnica a la cuenca Locumba como…</a>
 </div>
 </div>
 <div class="metadata">
@@ -832,49 +835,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="news,2023,enero" data-listing-date-sort="1704085200000" data-listing-file-modified-sort="1737681870605" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="69">
-<div class="thumbnail">
-<p><a href="./posts/pub22/index.html" class="no-external"></a></p><a href="./posts/pub22/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub22/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/pub22/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/pub22/index.html" class="no-external">Visita al Área de Intervención del MRSE-H de EPS ILO</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/pub22/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
-2023
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('enero'); return false;">
-enero
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/pub22/index.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/pub22/index.html" class="no-external">
-<div class="listing-date">
-1 ene 2024
-</div>
-<div class="listing-author">
-Equipo MRSE-H
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="16" data-categories="news,2024,enero" data-listing-date-sort="1704085200000" data-listing-file-modified-sort="1737681870605" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="101">
+<div class="quarto-post image-right" data-index="15" data-categories="bmV3cyUyQzIwMjQlMkNlbmVybw==" data-listing-date-sort="1704085200000" data-listing-file-modified-sort="1744249673952" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="101">
 <div class="thumbnail">
 <p><a href="./posts/pub21/index.html" class="no-external"></a></p><a href="./posts/pub21/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub21/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub21\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub21/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -885,18 +849,18 @@ Equipo MRSE-H
 <a href="./posts/pub21/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2024'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyNA=='); return false;">
 2024
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('enero'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('ZW5lcm8='); return false;">
 enero
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub21/index.html" class="no-external"></a>
+<a href="./posts/pub21/index.html" class="no-external">En enero de 2024, el Equipo MRSE-H de EPS ILO se unió a representantes de SUNASS y Forest Trends para trabajar en conjunto en la elaboración del Diseño de los Mecanismos de…</a>
 </div>
 </div>
 <div class="metadata">
@@ -910,10 +874,49 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="news,2023,diciembre" data-listing-date-sort="1702616400000" data-listing-file-modified-sort="1737681870604" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="149">
+<div class="quarto-post image-right" data-index="16" data-categories="bmV3cyUyQzIwMjMlMkNlbmVybw==" data-listing-date-sort="1704085200000" data-listing-file-modified-sort="1744249673953" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="69">
+<div class="thumbnail">
+<p><a href="./posts/pub22/index.html" class="no-external"></a></p><a href="./posts/pub22/index.html" class="no-external">
+<p class="card-img-top"><img src="posts\pub22\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/pub22/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/pub22/index.html" class="no-external">Visita al Área de Intervención del MRSE-H de EPS ILO</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/pub22/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
+news
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
+2023
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ZW5lcm8='); return false;">
+enero
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/pub22/index.html" class="no-external">El equipo MRSE-H de EPS ILO se unió a representantes de SUNASS y Forest Trends en una visita al área de intervención de la EPS en la microcuenca de Asana. El propósito de…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/pub22/index.html" class="no-external">
+<div class="listing-date">
+1 ene 2024
+</div>
+<div class="listing-author">
+Equipo MRSE-H
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-categories="bmV3cyUyQzIwMjMlMkNkaWNpZW1icmU=" data-listing-date-sort="1702616400000" data-listing-file-modified-sort="1744249673948" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="149">
 <div class="thumbnail">
 <p><a href="./posts/pub19/index.html" class="no-external"></a></p><a href="./posts/pub19/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub19/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub19\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub19/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -924,18 +927,18 @@ Equipo MRSE-H
 <a href="./posts/pub19/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('diciembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('ZGljaWVtYnJl'); return false;">
 diciembre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub19/index.html" class="no-external"></a>
+<a href="./posts/pub19/index.html" class="no-external">EPS ILO llevó a cabo la entrega de la construcción de 600 metros lineales de canales rústicos naturales, los cuales están funcionando como amunas, en beneficio de la…</a>
 </div>
 </div>
 <div class="metadata">
@@ -949,10 +952,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="news,2023,diciembre" data-listing-date-sort="1701406800000" data-listing-file-modified-sort="1737681870605" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="112">
+<div class="quarto-post image-right" data-index="18" data-categories="bmV3cyUyQzIwMjMlMkNkaWNpZW1icmU=" data-listing-date-sort="1701406800000" data-listing-file-modified-sort="1744249673950" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="112">
 <div class="thumbnail">
 <p><a href="./posts/pub20/index.html" class="no-external"></a></p><a href="./posts/pub20/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub20/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub20\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub20/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -963,18 +966,18 @@ Equipo MRSE-H
 <a href="./posts/pub20/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('diciembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('ZGljaWVtYnJl'); return false;">
 diciembre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub20/index.html" class="no-external"></a>
+<a href="./posts/pub20/index.html" class="no-external">El equipo MRSE-H de EPS ILO continua con sus labores periódicas de descarga de datos de la estación pluviométrica, como parte de su compromiso con la gestión sostenible del…</a>
 </div>
 </div>
 <div class="metadata">
@@ -988,10 +991,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="news,2023,noviembre" data-listing-date-sort="1701320400000" data-listing-file-modified-sort="1737681870603" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="113">
+<div class="quarto-post image-right" data-index="19" data-categories="bmV3cyUyQzIwMjMlMkNub3ZpZW1icmU=" data-listing-date-sort="1701320400000" data-listing-file-modified-sort="1744249673945" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="113">
 <div class="thumbnail">
 <p><a href="./posts/pub18/index.html" class="no-external"></a></p><a href="./posts/pub18/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub18/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub18\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub18/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1002,18 +1005,18 @@ Equipo MRSE-H
 <a href="./posts/pub18/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('noviembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bm92aWVtYnJl'); return false;">
 noviembre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub18/index.html" class="no-external"></a>
+<a href="./posts/pub18/index.html" class="no-external">EPS ILO entregó oficialmente la primera qocha natural a la Comunidad Campesina de Asana.</a>
 </div>
 </div>
 <div class="metadata">
@@ -1027,10 +1030,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="news,2023,noviembre" data-listing-date-sort="1700542800000" data-listing-file-modified-sort="1737681870603" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="84">
+<div class="quarto-post image-right" data-index="20" data-categories="bmV3cyUyQzIwMjMlMkNub3ZpZW1icmU=" data-listing-date-sort="1700542800000" data-listing-file-modified-sort="1744249673944" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="84">
 <div class="thumbnail">
 <p><a href="./posts/pub17/index.html" class="no-external"></a></p><a href="./posts/pub17/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub17/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub17\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub17/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1041,18 +1044,18 @@ Equipo MRSE-H
 <a href="./posts/pub17/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('noviembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bm92aWVtYnJl'); return false;">
 noviembre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub17/index.html" class="no-external"></a>
+<a href="./posts/pub17/index.html" class="no-external">Se culminó la construcción de la primera qocha natural en la zona. Este logro fue posible gracias a la participación activa de los comuneros de Asana y la EPS ILO.</a>
 </div>
 </div>
 <div class="metadata">
@@ -1066,10 +1069,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-categories="news,2023,octubre" data-listing-date-sort="1698642000000" data-listing-file-modified-sort="1737681870603" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="104">
+<div class="quarto-post image-right" data-index="21" data-categories="bmV3cyUyQzIwMjMlMkNvY3R1YnJl" data-listing-date-sort="1698642000000" data-listing-file-modified-sort="1744249673943" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="104">
 <div class="thumbnail">
 <p><a href="./posts/pub16/index.html" class="no-external"></a></p><a href="./posts/pub16/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub16/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub16\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub16/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1080,18 +1083,18 @@ Equipo MRSE-H
 <a href="./posts/pub16/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('octubre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('b2N0dWJyZQ=='); return false;">
 octubre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub16/index.html" class="no-external"></a>
+<a href="./posts/pub16/index.html" class="no-external">El compromiso de EPS ILO con la comunidad de Asana, se fortaleció más durante las festividades del 34° Aniversario de la Comunidad Campesina de Asana, donde la empresa…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1105,10 +1108,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-categories="news,2023,octubre" data-listing-date-sort="1697346000000" data-listing-file-modified-sort="1737681870603" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="93">
+<div class="quarto-post image-right" data-index="22" data-categories="bmV3cyUyQzIwMjMlMkNvY3R1YnJl" data-listing-date-sort="1697346000000" data-listing-file-modified-sort="1744249673942" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="93">
 <div class="thumbnail">
 <p><a href="./posts/pub15/index.html" class="no-external"></a></p><a href="./posts/pub15/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub15/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub15\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub15/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1119,18 +1122,18 @@ Equipo MRSE-H
 <a href="./posts/pub15/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('octubre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('b2N0dWJyZQ=='); return false;">
 octubre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub15/index.html" class="no-external"></a>
+<a href="./posts/pub15/index.html" class="no-external">EPS ILO partició en el Encuentro Nacional de MRSE-H, organizado por SEDAPAR. Este evento proporcionó una oportunidad para compartir las experiencias que EPS ILO ha estado…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1144,10 +1147,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="news,2023,octubre" data-listing-date-sort="1697000400000" data-listing-file-modified-sort="1737681870602" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="132">
+<div class="quarto-post image-right" data-index="23" data-categories="bmV3cyUyQzIwMjMlMkNvY3R1YnJl" data-listing-date-sort="1697000400000" data-listing-file-modified-sort="1744249673936" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="132">
 <div class="thumbnail">
 <p><a href="./posts/pub13/index.html" class="no-external"></a></p><a href="./posts/pub13/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub13/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub13\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub13/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1158,18 +1161,18 @@ Equipo MRSE-H
 <a href="./posts/pub13/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('octubre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('b2N0dWJyZQ=='); return false;">
 octubre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub13/index.html" class="no-external"></a>
+<a href="./posts/pub13/index.html" class="no-external">El equipo MRSE-H de EPS ILO realizó el lanzamiento de la plataforma web MRSE-H, a través de un webinar que contó con la participación de 3 panelistas representantes de…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1183,10 +1186,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-categories="news,2023,octubre" data-listing-date-sort="1696568400000" data-listing-file-modified-sort="1737681870601" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="124">
+<div class="quarto-post image-right" data-index="24" data-categories="bmV3cyUyQzIwMjMlMkNvY3R1YnJl" data-listing-date-sort="1696568400000" data-listing-file-modified-sort="1744249673935" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="124">
 <div class="thumbnail">
 <p><a href="./posts/pub12/index.html" class="no-external"></a></p><a href="./posts/pub12/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/pub12/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts\pub12\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub12/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1197,18 +1200,18 @@ Equipo MRSE-H
 <a href="./posts/pub12/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('octubre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('b2N0dWJyZQ=='); return false;">
 octubre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub12/index.html" class="no-external"></a>
+<a href="./posts/pub12/index.html" class="no-external">EPS ILO tuvo el honor de participar en EXPOAGUA durante la Jornada MERESE 2023, bajo el lema “Experiencias para impulsar y escalar su implementación en el Perú”. En este…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1222,10 +1225,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="25" data-categories="news,2023,octubre" data-listing-date-sort="1696136400000" data-listing-file-modified-sort="1737681870602" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="78">
+<div class="quarto-post image-right" data-index="25" data-categories="bmV3cyUyQzIwMjMlMkNvY3R1YnJl" data-listing-date-sort="1696136400000" data-listing-file-modified-sort="1744249673940" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="78">
 <div class="thumbnail">
 <p><a href="./posts/pub14/index.html" class="no-external"></a></p><a href="./posts/pub14/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub14/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub14\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub14/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1236,18 +1239,18 @@ Equipo MRSE-H
 <a href="./posts/pub14/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('octubre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('b2N0dWJyZQ=='); return false;">
 octubre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub14/index.html" class="no-external"></a>
+<a href="./posts/pub14/index.html" class="no-external">Durante el mes de octubre de 2023, el equipo MRSE-H de EPS ILO realizó trabajos de campo junto a los comuneros de Asana para llevar a cabo la ejecución de la construcción de…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1261,10 +1264,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="26" data-categories="news,2023,setiembre" data-listing-date-sort="1694667600000" data-listing-file-modified-sort="1737681870601" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="123">
+<div class="quarto-post image-right" data-index="26" data-categories="bmV3cyUyQzIwMjMlMkNzZXRpZW1icmU=" data-listing-date-sort="1694667600000" data-listing-file-modified-sort="1744249673934" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="123">
 <div class="thumbnail">
 <p><a href="./posts/pub11/index.html" class="no-external"></a></p><a href="./posts/pub11/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub11/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub11\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub11/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1275,18 +1278,18 @@ Equipo MRSE-H
 <a href="./posts/pub11/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('setiembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('c2V0aWVtYnJl'); return false;">
 setiembre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub11/index.html" class="no-external"></a>
+<a href="./posts/pub11/index.html" class="no-external">Como parte de su compromiso con el fortalecimiento de capacidades, la EPS ILO junto con comuneros de Asana, llevó a cabo una pasantía en la empresa SEDAPAR. Esta visita tuvo…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1300,10 +1303,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="27" data-categories="news,2023,agosto" data-listing-date-sort="1691211600000" data-listing-file-modified-sort="1737681870620" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="129">
+<div class="quarto-post image-right" data-index="27" data-categories="bmV3cyUyQzIwMjMlMkNhZ29zdG8=" data-listing-date-sort="1691211600000" data-listing-file-modified-sort="1744249673998" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="129">
 <div class="thumbnail">
 <p><a href="./posts/pub9/index.html" class="no-external"></a></p><a href="./posts/pub9/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub9/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub9\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub9/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1314,18 +1317,18 @@ Equipo MRSE-H
 <a href="./posts/pub9/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('agosto'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('YWdvc3Rv'); return false;">
 agosto
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub9/index.html" class="no-external"></a>
+<a href="./posts/pub9/index.html" class="no-external">EPS ILO compartió sus avances y desafíos en la implementación de los Mecanismos de Retribución por Servicios Ecosistémicos Hídricos (MRSE) en el “I Encuentro de los MRSE de…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1339,10 +1342,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="28" data-categories="news,2023,agosto" data-listing-date-sort="1690866000000" data-listing-file-modified-sort="1737681870600" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
+<div class="quarto-post image-right" data-index="28" data-categories="bmV3cyUyQzIwMjMlMkNhZ29zdG8=" data-listing-date-sort="1690866000000" data-listing-file-modified-sort="1744249673933" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
 <div class="thumbnail">
 <p><a href="./posts/pub10/index.html" class="no-external"></a></p><a href="./posts/pub10/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub10/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub10\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub10/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1353,18 +1356,18 @@ Equipo MRSE-H
 <a href="./posts/pub10/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('agosto'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('YWdvc3Rv'); return false;">
 agosto
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub10/index.html" class="no-external"></a>
+<a href="./posts/pub10/index.html" class="no-external">La EPS ILO ha sido reconocida con la Resolución Directoral N°003-2023-MINAM/VMDERN/DGEFA por el Ministerio del Ambiente, en virtud de su compromiso con la conservación y…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1378,10 +1381,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="29" data-categories="news,2023,julio" data-listing-date-sort="1688878800000" data-listing-file-modified-sort="1737681870620" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="93">
+<div class="quarto-post image-right" data-index="29" data-categories="bmV3cyUyQzIwMjMlMkNqdWxpbw==" data-listing-date-sort="1688878800000" data-listing-file-modified-sort="1744249673996" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="93">
 <div class="thumbnail">
 <p><a href="./posts/pub8/index.html" class="no-external"></a></p><a href="./posts/pub8/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub8/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub8\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub8/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1392,18 +1395,18 @@ Equipo MRSE-H
 <a href="./posts/pub8/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('julio'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('anVsaW8='); return false;">
 julio
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub8/index.html" class="no-external"></a>
+<a href="./posts/pub8/index.html" class="no-external">El compromiso de sensibilización del Equipo MRSE-H de EPS ILO se manifestó en la Asamblea de la Comunidad Campesina de Asana, con la participación de la Gerencia General CPC…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1417,10 +1420,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="30" data-categories="news,mayo,2023" data-listing-date-sort="1684990800000" data-listing-file-modified-sort="1737681870619" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="91">
+<div class="quarto-post image-right" data-index="30" data-categories="bmV3cyUyQ21heW8lMkMyMDIz" data-listing-date-sort="1684990800000" data-listing-file-modified-sort="1744249673995" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="91">
 <div class="thumbnail">
 <p><a href="./posts/pub7/index.html" class="no-external"></a></p><a href="./posts/pub7/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub7/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub7\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub7/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1431,18 +1434,18 @@ Equipo MRSE-H
 <a href="./posts/pub7/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('mayo'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bWF5bw=='); return false;">
 mayo
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub7/index.html" class="no-external"></a>
+<a href="./posts/pub7/index.html" class="no-external">Como parte del compromiso de sensibilización del Equipo MRSE-H de EPS ILO, se convocó a la junta directiva de la Comunidad de Asana en las instalaciones de la EPS. El…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1456,10 +1459,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="31" data-categories="news,abril,2023" data-listing-date-sort="1681621200000" data-listing-file-modified-sort="1737681870619" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="105">
+<div class="quarto-post image-right" data-index="31" data-categories="bmV3cyUyQ2FicmlsJTJDMjAyMw==" data-listing-date-sort="1681621200000" data-listing-file-modified-sort="1744249673993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="105">
 <div class="thumbnail">
 <p><a href="./posts/pub6/index.html" class="no-external"></a></p><a href="./posts/pub6/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub6/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub6\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub6/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1470,18 +1473,18 @@ Equipo MRSE-H
 <a href="./posts/pub6/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('abril'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('YWJyaWw='); return false;">
 abril
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub6/index.html" class="no-external"></a>
+<a href="./posts/pub6/index.html" class="no-external">El compromiso de sensibilización de EPS ILO y SUNASS se hizo evidente en la Asamblea de la Comunidad Campesina de Asana. Ambas entidades se unieron para informar a los…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1495,10 +1498,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="32" data-categories="news,PBG,abril,2023" data-listing-date-sort="1681448400000" data-listing-file-modified-sort="1737681870618" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="125">
+<div class="quarto-post image-right" data-index="32" data-categories="bmV3cyUyQ1BCRyUyQ2FicmlsJTJDMjAyMw==" data-listing-date-sort="1681448400000" data-listing-file-modified-sort="1744249673992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="125">
 <div class="thumbnail">
 <p><a href="./posts/pub5/index.html" class="no-external"></a></p><a href="./posts/pub5/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub5/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub5\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub5/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1509,21 +1512,21 @@ Equipo MRSE-H
 <a href="./posts/pub5/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('PBG'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('UEJH'); return false;">
 PBG
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('abril'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('YWJyaWw='); return false;">
 abril
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub5/index.html" class="no-external"></a>
+<a href="./posts/pub5/index.html" class="no-external">El equipo MRSE-H de EPS ILO organizó el primer encuentro de la Plataforma de Buena Gobernanza sobre los Mecanismos de Retribución por Servicios Ecosistémicos Hídricos de la…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1537,10 +1540,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="33" data-categories="asana,marzo,2023" data-listing-date-sort="1677733200000" data-listing-file-modified-sort="1737681870618" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="127">
+<div class="quarto-post image-right" data-index="33" data-categories="YXNhbmElMkNtYXJ6byUyQzIwMjM=" data-listing-date-sort="1677733200000" data-listing-file-modified-sort="1744249673991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="127">
 <div class="thumbnail">
 <p><a href="./posts/pub4/index.html" class="no-external"></a></p><a href="./posts/pub4/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub4/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub4\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub4/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1551,18 +1554,18 @@ Equipo MRSE-H
 <a href="./posts/pub4/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('asana'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('YXNhbmE='); return false;">
 asana
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('marzo'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bWFyem8='); return false;">
 marzo
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2023'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMw=='); return false;">
 2023
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub4/index.html" class="no-external"></a>
+<a href="./posts/pub4/index.html" class="no-external">EPS ILO ha dado un paso significativo en cumplimiento con el Plan de Intervención del MRSE-H al instalar la primera estación pluviométrica en la subcuenca de Asana. Esta…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1576,10 +1579,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="34" data-categories="news,noviembre,2022" data-listing-date-sort="1668315600000" data-listing-file-modified-sort="1737681870611" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="114">
+<div class="quarto-post image-right" data-index="34" data-categories="bmV3cyUyQ25vdmllbWJyZSUyQzIwMjI=" data-listing-date-sort="1668315600000" data-listing-file-modified-sort="1744249673969" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="114">
 <div class="thumbnail">
 <p><a href="./posts/pub3/index.html" class="no-external"></a></p><a href="./posts/pub3/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub3/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub3\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub3/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1590,18 +1593,18 @@ Equipo MRSE-H
 <a href="./posts/pub3/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('noviembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bm92aWVtYnJl'); return false;">
 noviembre
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2022'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMg=='); return false;">
 2022
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub3/index.html" class="no-external"></a>
+<a href="./posts/pub3/index.html" class="no-external">El Equipo MRSE-H de EPS ILO ha llevado a cabo la supervisión de los trabajos del Plan de Intervención de MRSE-H en la subcuenca de Asana, en colaboración con los comuneros…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1615,10 +1618,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="35" data-categories="news,2022,noviembre" data-listing-date-sort="1667278800000" data-listing-file-modified-sort="1737681870604" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="85">
+<div class="quarto-post image-right" data-index="35" data-categories="bmV3cyUyQzIwMjIlMkNub3ZpZW1icmU=" data-listing-date-sort="1667278800000" data-listing-file-modified-sort="1744249673949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="85">
 <div class="thumbnail">
 <p><a href="./posts/pub2/index.html" class="no-external"></a></p><a href="./posts/pub2/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub2/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub2\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub2/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1629,18 +1632,18 @@ Equipo MRSE-H
 <a href="./posts/pub2/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
 news
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2022'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMg=='); return false;">
 2022
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('noviembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bm92aWVtYnJl'); return false;">
 noviembre
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub2/index.html" class="no-external"></a>
+<a href="./posts/pub2/index.html" class="no-external">El equipo encargado de los MRSE-H está llevando a cabo una serie de charlas de sensibilización sobre la importancia de los mecanismos en la conservación y recuperación de…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1654,10 +1657,10 @@ Equipo MRSE-H
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="36" data-categories="setiembre,2022" data-listing-date-sort="1664254800000" data-listing-file-modified-sort="1737681870600" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="95">
+<div class="quarto-post image-right" data-index="36" data-categories="c2V0aWVtYnJlJTJDMjAyMg==" data-listing-date-sort="1664254800000" data-listing-file-modified-sort="1744249673931" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="95">
 <div class="thumbnail">
 <p><a href="./posts/pub1/index.html" class="no-external"></a></p><a href="./posts/pub1/index.html" class="no-external">
-<p class="card-img-top"><img data-src="posts/pub1/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="posts\pub1\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/pub1/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1668,15 +1671,15 @@ Equipo MRSE-H
 <a href="./posts/pub1/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('setiembre'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('c2V0aWVtYnJl'); return false;">
 setiembre
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('2022'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('MjAyMg=='); return false;">
 2022
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/pub1/index.html" class="no-external"></a>
+<a href="./posts/pub1/index.html" class="no-external">La iniciativa tiene como objetivo llevar a cabo acciones de conservación, recuperación y sostenibilidad. La EPS ha identificado la cuenca Tumilaca, específicamente la…</a>
 </div>
 </div>
 <div class="metadata">
@@ -1777,8 +1780,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1889,7 +1890,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -2117,14 +2117,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 
-<script type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (_event) {
-  if (window.bslib.Card) {
-    window.bslib.Card.initializeAllCards();
-  }
-}); 
-</script>
-  
 
 
 
