@@ -38,7 +38,7 @@ title: ""
         </div>
 
         <div class="col-lg-4 col-md-6 d-noflex align-items-stretch">
-          <a href="Datos de monitoreo.qmd" style="text-decoration: none; color: inherit;">
+          <a href="monitoreo_beta.qmd" style="text-decoration: none; color: inherit;">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-droplet"></i></div>
               <h4> Datos de precipitación</h4>
