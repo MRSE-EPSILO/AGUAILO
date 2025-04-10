@@ -2,6 +2,11 @@
   {
     "listing": "/noticias.html",
     "items": [
+      "/posts/pub42/index.html",
+      "/posts/pub41/index.html",
+      "/posts/pub40/index.html",
+      "/posts/pub39/index.html",
+      "/posts/pub38/index.html",
       "/posts/pub37/index.html",
       "/posts/pub36/index.html",
       "/posts/pub35/index.html",
@@ -17,8 +22,8 @@
       "/posts/pub25/index.html",
       "/posts/pub24/index.html",
       "/posts/pub23/index.html",
-      "/posts/pub22/index.html",
       "/posts/pub21/index.html",
+      "/posts/pub22/index.html",
       "/posts/pub19/index.html",
       "/posts/pub20/index.html",
       "/posts/pub18/index.html",
