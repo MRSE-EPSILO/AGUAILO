@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 body {
-	font-family: "Open Sans", sans-serif;
+	font-family: "Libre Baskerville", serif;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
@@ -71,13 +71,13 @@ img, svg {
 
 
 #header {
-	transition: ease-in-out 0.3s;
+	transition: background 0.5s ease-in-out;
 	position: relative;
 	display: flex;
 	align-items: center;
 	z-index: 997;
 	overflow-y: auto;
-	background: #0073bae7;
+	background: #003b4f;
 	height: 80px;
 	position: fixed;
 	left: 0;
@@ -94,7 +94,7 @@ img, svg {
     font-size: 1.4rem;
   	line-height: 0.3;
 	font-weight: 700;
-	font-family: "Poppins", sans-serif;
+	font-family: "Libre Baskerville", serif;
 }
 
 #header.header-top h2 {
@@ -102,12 +102,12 @@ img, svg {
     font-size: 14px;
   	line-height: 1;
 	font-weight: 400;
-	font-family: "Poppins", sans-serif;
+	font-family: "Libre Baskerville", serif;
 }
 
 #header a {
     text-decoration: none;
-    color:black
+    color:white
 }
 
 #header.header-top .container {
@@ -120,7 +120,7 @@ img, svg {
 }
 
 
-@media (max-width: 1152px) {
+@media (max-width: 950px) {
     #header.header-top {
       height: 80px;
     }
@@ -168,7 +168,7 @@ img, svg {
 --------------------------------------------------------------*/
 .services .icon-box {
 	text-align: center;
-	background: rgba(204, 204, 204, 0.1);
+	background: white;
 	padding: 80px 20px;
 	transition: all ease-in-out 0.3s;
   }
@@ -188,7 +188,7 @@ img, svg {
   }
   
   .services .icon-box .icon i {
-	color: "white";
+	color: white;
 	font-size: 60px;
   }
   
@@ -267,11 +267,11 @@ section {
   }
 
   section .container {
-	background: #2c3f50;
+	background: #76CACC;
 	padding: 30px;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
 	section {
 	  top: 120px;
 	}
@@ -290,13 +290,13 @@ section {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	color: black;
-	font-family: "Poppins", sans-serif;
+	font-family: "Libre Baskerville", serif;
   }
   
   .section-title h2::after {
 	content: "";
 	width: 120px;
-	height: 1px;
+	height: 2px;
 	display: inline-block;
 	background: #0073ba;
 	margin: 4px 10px;
@@ -306,9 +306,9 @@ section {
 	margin: 0;
 	margin: -15px 0 15px 0;
 	font-size: 1.4rem;
-	font-weight: 300;
+	font-weight: 500;
 	text-transform: uppercase;
-	font-family: "Poppins", sans-serif;
+	font-family: "Libre Baskerville", serif;
 	color: black;
   }
   
