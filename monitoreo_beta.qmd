@@ -19,20 +19,19 @@ library(tidyverse)
 library(openxlsx)
 ```
 
-
-## xd
-
+# Histórico {.tabset width="100%"}
+## xddd
 ```{r}
 #| title: "Estación 01"
 source("Scripts/Estacion1.R")
-estacion1("datasets/Victoriano_estación.csv")
+estacion1("datasets/ASA_01_PO_01")
 ```
 
 
 ```{r}
 #| title: "Estación 02"
 source("Scripts/Estacion2.R")
-qocha(df_nueva = "datasets/22003743-hobo.xlsx")
+qocha(carpeta = "datasets/ASA_01_PO_02")
 ```
 
 ## xddd
@@ -40,62 +39,66 @@ qocha(df_nueva = "datasets/22003743-hobo.xlsx")
 ```{r}
 #| title: "Estación 03"
 source("Scripts/Estacion3.R")
-pesaje(df_nueva = "datasets/AG3-3477.xlsx")
+pesaje(carpeta = "datasets/ASA_01_PO_03")
 ```
 
 ```{r}
 #| title: "Estaciones hidrométricas"
 
-library(tidyverse)
-library(lubridate)
+df <- read.csv("datasets/ASA_02_SO/PROCESADO_ASA_01_SO_14_10_25.csv", skip = 2, header = F) %>%
+  select(2,6) %>% mutate(V2 = as.POSIXct(V2, format = "%m/%d/%y %I:%M:%S %p", tz = "UTC"))
+names(df) <- c("date", "hidrometria_punto1")
 
-# Definir un rango de fechas (por ejemplo, desde 2025-01-01 hasta 2025-01-10)
-fechas <- seq(ymd("2025-01-01"), ymd("2025-01-21"), by = "days")
+df2 <- df %>%
+    mutate(dia = as.Date(date, format = "%Y-%m-%d")) %>%
+    summarise(hidrometria_punto1 = mean(hidrometria_punto1, na.rm = T), .by = dia)
 
-# Generar datos aleatorios para las dos columnas de hidrometría (por ejemplo, mediciones en metros)
-set.seed(123)  # Para hacer los resultados reproducibles
-hidrometria_punto1 <- runif(length(fechas), min = 0, max = 10)  # Valores aleatorios para el primer punto de aforo
-hidrometria_punto2 <- runif(length(fechas), min = 0, max = 10)  # Valores aleatorios para el segundo punto de aforo
-
-# Crear la tabla con las fechas y las dos columnas de hidrometría
-tabla_hidrometria <- tibble(
-  fecha = fechas,
-  hidrometria_punto1 = round(hidrometria_punto1, 2),  # Redondear a 2 decimales
-  hidrometria_punto2 = round(hidrometria_punto2, 2)   # Redondear a 2 decimales
-)
-
-
-tabla_hidrometria <- tabla_hidrometria %>% 
-  mutate(fecha = as.POSIXct(paste(fecha, "01:00:00"),
-                           format = "%Y-%m-%d %H:%M:%S"),
-         fecha = as.numeric(fecha)*1000)
-
-highchart() %>%
-  hc_add_series(
-    data = list_parse2(tabla_hidrometria %>% select(fecha, hidrometria_punto1)), 
-    type = "line", 
-    name = "Punto 2",
-    color = "#154c79",
-    tooltip = list(valueDecimals = 1)) %>% 
-  hc_add_series(
-    data = list_parse2(tabla_hidrometria %>% select(fecha, hidrometria_punto2)), 
-    type = "line", 
-    name = "Punto 1",
-    color = "hotpink",
-    tooltip = list(valueDecimals = 1)) %>% 
-  hc_xAxis(type = "datetime") %>% 
-  hc_title(
-      text = "<b>Estaciones hidrométricas</b> - Niveles de agua (m)",
+df2 <- df2 %>%
+    hchart(., type = "column", 
+           hcaes(x = dia, 
+                 y = hidrometria_punto1), color = "#154c79", name = "Altura") %>% 
+    hc_title(
+      text = "<b>Estación 01</b> - Precipitación diaria (mm)",
       margin = 20,
       align = "left",
       style = list(color = "#154c79", useHTML = TRUE)) %>% 
-  hc_exporting(
-    enabled = TRUE,
-    buttons = list(
-      contextButton = list(
-        menuItems = c("downloadPNG",
-                      "downloadCSV",
-                      "downloadXLS",
-                      "downloadPDF"))))
+    hc_exporting(
+      enabled = TRUE,
+      buttons = list(
+        contextButton = list(
+          menuItems = c("downloadPNG",
+                        "downloadCSV",
+                        "downloadXLS",
+                        "downloadPDF"))))
+  
+  df2
 ```
 
+# Mapas {.tabset width="100%"}
+## xdd
+```{r}
+#| title: NDVI
+#| warning: false
+#| message: false
+#| echo: false
+knitr::include_graphics("mapas.gif")
+```
+
+## xddd
+
+```{r}
+#| title: Mapa web del MRSE
+#| echo: false
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat=-17.062286,lng=-70.520806,
+             popup = paste(sep="<br>","<b>Lugar:</b>","Estación pluviométrica","<b>Latitud:</b>","-17.062286","<b>Longitud:</b>"
+                           ,"-70.520806")) %>%
+  addCircleMarkers(lat=c(-17.062286,-17.630402),
+                   lng=c(-70.520806,-71.335089), radius = 40,
+                   color="deepskyblue") %>%
+  addMarkers(lat=-17.630402,lng=-71.335089,
+             popup = paste(sep="<br>","<b>Lugar:</b>","EPS ILO S.A.","<b>Latitud:</b>","-17.630402","<b>Longitud:</b>",
+                           "-71.19908"))
+```

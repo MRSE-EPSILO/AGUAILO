@@ -1,7 +1,8 @@
 # Estación de tipo pesaje -------------------------------------------------
 
-pesaje <- function(df_nueva){
-  a <- read.xlsx(df_nueva, startRow = 1440) %>% 
+pesaje <- function(carpeta){
+  df_nuevo <- list.files(path = carpeta, pattern = "*.xlsx", full.names = TRUE)[1]
+  a <- read.xlsx(df_nuevo, startRow = 1440) %>% 
     select(c(1,4,6)) %>% 
     rename_at(vars(1,2,3), ~c("date", "pp", "temp")) %>% 
     mutate(date = as.POSIXct(date * 86400, origin = "1899-12-30", tz = "UTC"),

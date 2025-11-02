@@ -1,19 +1,23 @@
 # Estación de la qocha ----------------------------------------------------
 
-qocha <- function(df_nueva){
-  a <- read.xlsx(df_nueva, startRow = 2) %>% 
+qocha <- function(carpeta){
+  df_nuevo <- list.files(path = carpeta, pattern = "*.csv", full.names = TRUE)[1]
+  a <- read.csv(df_nuevo, skip = 2) %>% 
     select(c(2,3,5)) %>% 
     rename_at(vars(1,2,3), ~c("date", "temp", "pp")) %>% 
-    mutate(date = as.POSIXct(date * 86400, origin = "1899-12-30", tz = "UTC"))
+    mutate(date = as.POSIXct(date, format = "%m/%d/%y %I:%M:%S %p", tz = "UTC"))
   
-  a1 <- a %>% 
-    mutate(date = as.Date(date)) %>% 
-    summarise(temp = mean(temp, na.rm = TRUE), .by = "date")
+  a1 <- a %>%
+  mutate(date = as.Date(date)) %>%
+  summarise(
+    temp = mean(temp, na.rm = TRUE),
+    pp   = sum(pp, na.rm = TRUE),
+    .by  = date
+  )
   
-  a1$pp <- a %>% filter(!is.na(pp)) %>% select(pp) %>% pull()
   a1 <- a1 %>% 
     mutate(date = as.POSIXct(paste(date, "01:00:00"),
-                             format = "%Y-%m-%d %H:%M:%S"),
+                             format = "%Y-%m-%d %H:%M:%S" , tz = "UTC"),
            date = as.numeric(date)*1000)
   
   highchart() %>%

@@ -1,13 +1,14 @@
 # Estación Victoriano -----------------------------------------------------
 
-estacion1 <- function(df_nuevo){
+estacion1 <- function(carpeta){
+  df_nuevo <- list.files(path = carpeta, pattern = "*.csv", full.names = TRUE)[1]
   a <- read.csv("data_marzo.csv") %>% 
-    mutate(date = as.POSIXct(paste(date, hora, sep = " "),format = "%Y-%m-%d %H:%M")) %>% 
+    mutate(date = as.POSIXct(paste(date, hora, sep = " "),format = "%Y-%m-%d %H:%M", tz = "UTC")) %>% 
     select(-hora)
   
-  b <- read.csv(df_nuevo, skip = 2,header = F)
+  b <- read.csv(df_nuevo, skip = 2,header = F)[-1]
   names(b) <- c("date", "pp")
-  b$date <- as.POSIXct(b$date, format = "%Y/%m/%d %H:%M")
+  b$date <- as.POSIXct(b$date, format = "%m/%d/%y %I:%M:%S %p", tz = "UTC")
   
   # Unión de datasets
   df2 <- rbind(a, b) %>% 

@@ -16,7 +16,7 @@ library(tidyverse)
 library(plotly)
 ```
 
-## Column {.tabset width="65%"}
+## Monitoreo  {.tabset width="65%"}
 
 
 ```{r}
