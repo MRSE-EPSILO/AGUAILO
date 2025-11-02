@@ -3,12 +3,12 @@
 --------------------------------------------------------------*/
 
 body {
-	font-family: "Libre Baskerville", serif;
-	font-size: 12pt;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
-	background-color: white;
-	color: white;
+	background-color: black;
+	color: black;
 	position: relative;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: transparent;
@@ -71,13 +71,13 @@ img, svg {
 
 
 #header {
-	transition: background 0.3s ease-in-out;
+	transition: ease-in-out 0.3s;
 	position: relative;
 	display: flex;
 	align-items: center;
 	z-index: 997;
 	overflow-y: auto;
-	background:#9dd9d2 !important;
+	background: #0073bae7;
 	height: 80px;
 	position: fixed;
 	left: 0;
@@ -90,11 +90,11 @@ img, svg {
 }
 
 #header.header-top h1 {
-  margin-right: auto;
-  font-size: 1.4rem;
+    margin-right: auto;
+    font-size: 1.4rem;
   	line-height: 0.3;
-	  font-weight: 700;
-  	font-family: "Libre Baskerville", serif;
+	font-weight: 700;
+	font-family: "Poppins", sans-serif;
 }
 
 #header.header-top h2 {
@@ -102,12 +102,12 @@ img, svg {
     font-size: 14px;
   	line-height: 1;
 	font-weight: 400;
-	font-family: "Libre Baskerville", serif;
+	font-family: "Poppins", sans-serif;
 }
 
 #header a {
     text-decoration: none;
-    color:white
+    color:black
 }
 
 #header.header-top .container {
@@ -177,7 +177,7 @@ img, svg {
 	margin: 0 auto;
 	width: 100px;
 	height: 100px;
-	background: white;
+	background: #0073ba;
 	border-radius: 5px;
 	transition: all 0.3s ease-out 0s;
 	display: flex;
@@ -188,7 +188,7 @@ img, svg {
   }
   
   .services .icon-box .icon i {
-	color: #0073ba;
+	color: "white";
 	font-size: 60px;
   }
   
@@ -235,7 +235,7 @@ img, svg {
   }
   
   .services .icon-box:hover .icon::before {
-	background: none;
+	background: #7ad3ff;
   }
   
   .services .icon-box:hover h4 a,
@@ -249,8 +249,7 @@ img, svg {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  
-  overflow: hidden;
+	overflow: hidden;
 	position: absolute;
 	width: 100%;
 	top: 140px;
@@ -268,7 +267,7 @@ section {
   }
 
   section .container {
-	background: #273440;
+	background: #2c3f50;
 	padding: 30px;
   }
   
@@ -291,13 +290,13 @@ section {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	color: black;
-	font-family: "Libre Baskerville", serif;
+	font-family: "Poppins", sans-serif;
   }
   
   .section-title h2::after {
 	content: "";
 	width: 120px;
-	height: 2px;
+	height: 1px;
 	display: inline-block;
 	background: #0073ba;
 	margin: 4px 10px;
@@ -307,9 +306,9 @@ section {
 	margin: 0;
 	margin: -15px 0 15px 0;
 	font-size: 1.4rem;
-	font-weight: 500;
+	font-weight: 300;
 	text-transform: uppercase;
-	font-family: "Libre Baskerville", serif;
+	font-family: "Poppins", sans-serif;
 	color: black;
   }
   
@@ -324,23 +323,16 @@ section {
     text-align: center; 
     padding: 20px 0;
     font-size: 10px; 
-	position: relative;
+	position: fixed;
 	padding-top: 44%;
 	padding-left: 80%;
 }
 
 
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
 /*--------------------------------------------------------------
 # Phone view
 --------------------------------------------------------------*/
-@media @media (max-width: 900px) {
+@media (max-width: 900px) {
 .section-title h2::after {
    display: none!important;
 }
