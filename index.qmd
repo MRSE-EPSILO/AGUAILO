@@ -1,5 +1,6 @@
 ---
 title: ""
+mainfont: "Libre Baskerville"
 ---
 
 ```{=html}
@@ -7,11 +8,10 @@ title: ""
 <head>
 <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" >
     <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
     
 
@@ -21,14 +21,12 @@ title: ""
 
       <div class="section-title">
         
-        <h2 style="color: white;">Información del MRSE-H al alcance de todos</h2>
-        
-        <p style="color: white;">Secciones destacadas de la página</p>
+        <p style="color: white;">Secciones destacadas de la plataforma</p>
       </div>
 
       <div class="row">
         <div class="col-lg-4 col-md-6 d-noflex align-items-stretch">
-          <a href="noticias.qmd" style="text-decoration: none; color: inherit;">
+          <a href="noticias.qmd" style="text-decoration: none; color: white;">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-news"></i></div>
               <h4>Sección de noticias</h4>
@@ -38,10 +36,9 @@ title: ""
         </div>
 
         <div class="col-lg-4 col-md-6 d-noflex align-items-stretch">
-          <a href="monitoreo_beta.qmd" style="text-decoration: none; color: inherit;">
+          <a href="monitoreo_beta.qmd" style="text-decoration: none; color: white;">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-droplet"></i></div>
-              <h4> Datos de precipitación</h4>
+              <div class="icon"><i class="bx bx-droplet"></i></div>Monitoreo Hidrológico</h4>
               <p></p>
             </div>
           </a>

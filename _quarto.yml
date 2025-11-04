@@ -24,8 +24,8 @@ website:
       - noticias.qmd
       - icon: instagram
         href: https://www.instagram.com/mrse.epsilo/
-      - icon: twitter
-        href: https://twitter.com
+      - icon: facebook
+        href: https://web.facebook.com/profile.php?id=61568465323222
 format:
   html:
     theme: flatly
