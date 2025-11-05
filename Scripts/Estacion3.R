@@ -2,14 +2,42 @@
 
 pesaje <- function(carpeta){
   df_nuevo <- list.files(path = carpeta, pattern = "*.xlsx", full.names = TRUE)[1]
-  a <- read.xlsx(df_nuevo, startRow = 1440) %>% 
-    select(c(1,4,6)) %>% 
-    rename_at(vars(1,2,3), ~c("date", "pp", "temp")) %>% 
-    mutate(date = as.POSIXct(date * 86400, origin = "1899-12-30", tz = "UTC"),
-           prec_5min = c(0, diff(pp))) %>% 
-    mutate(date = as.Date(date)) %>% 
+
+  a <- read.csv("datasets/acumulado/estacion3_acumulado.csv") %>%
+    mutate(date = as.POSIXct(date, format = "%Y-%m-%d %H:%M", tz = "UTC"))
+
+  b <- read_excel(df_nuevo) %>%
+  mutate(`Date/Time` = as.POSIXct(`Date/Time`, tz = "UTC")) %>%
+  filter(`Date/Time` >= as.POSIXct(
+    "2025-01-15 12:15", tz = "UTC")) %>%
+  rename(
+    date = `Date/Time`,
+    precip_inst = `Precip Inst (mm)`,
+    precip_tot = `Precip Tot (mm)`,
+    peso_cubo = `Peso Cubo (g)`,
+    temp = `Temperatura (°C)`
+  ) %>% arrange(date) %>%
+  mutate(reinicio = precip_tot < lag(
+    precip_tot, default = first(precip_tot))) %>%
+  mutate(
+    precip_continua = precip_tot +
+      cumsum(if_else(precip_tot < lag(
+        precip_tot, default = first(precip_tot)),
+        lag(precip_tot, default = first(precip_tot)), 0)),
+        pp = precip_continua - lag(
+          precip_continua, default = first(precip_continua))
+  ) %>% select(date, temp, pp)
+  
+  a <- rbind(a,b) %>% distinct()
+  write.table(a %>%
+    mutate(date = format(date, format = "%Y-%m-%d %H:%M")),
+   "datasets/acumulado/estacion3_acumulado.csv",
+    row.names = FALSE, sep = ",")
+  
+  a <- a %>%
+    mutate(date = as.Date(date)) %>%
     summarise(temp = mean(temp, na.rm = TRUE),
-              pp = sum(prec_5min, na.rm = TRUE),.by = "date") %>% 
+              pp = sum(pp, na.rm = TRUE),.by = "date") %>% 
     mutate(date = as.POSIXct(paste(date, "01:00:00"),
                              format = "%Y-%m-%d %H:%M:%S"),
            date = as.numeric(date)*1000)
