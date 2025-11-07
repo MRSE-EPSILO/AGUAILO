@@ -67,7 +67,7 @@ df <- read_excel("datasets/ASA_01_PO_03/AG3-3477.xlsx",
   ) %>% select(date, temp, pp) %>%
   mutate(date = format(date, format = "%Y-%m-%d %H:%M"))
 
-
+df <- df %>% slice(0)
 write.table(df, "datasets/acumulado/estacion3_acumulado.csv", row.names = FALSE, sep = ",")
 
 df2 <- read.csv("datasets/acumulado/estacion3_acumulado.csv")

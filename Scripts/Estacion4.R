@@ -23,10 +23,22 @@ bofedal <- function(carpeta){
            hcaes(x = Día, 
                  y = Nivel), color = "#154c79", name = "Altura") %>% 
     hc_title(
-      text = "<b>Estación 04</b> - Nivel (pies)",
+      text = "Nivel (m)",
       margin = 20,
       align = "left",
       style = list(color = "#154c79", useHTML = TRUE)) %>% 
+    hc_xAxis(
+    title = list(
+      text = "",
+      style = list(color = "#154c79", fontWeight = "bold")
+    )
+  ) %>%
+  hc_yAxis(
+    title = list(
+      text = "",
+      style = list(color = "#154c79", fontWeight = "bold")
+    )
+  ) %>%
     hc_exporting(
       enabled = TRUE,
       buttons = list(

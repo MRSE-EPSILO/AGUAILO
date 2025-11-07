@@ -24,10 +24,22 @@ estacion1 <- function(carpeta){
            hcaes(x = dia, 
                  y = pp), color = "#154c79", name = "Precipitación") %>% 
     hc_title(
-      text = "<b>Estación 01</b> - Precipitación diaria (mm)",
+      text = "Precipitación diaria (mm)",
       margin = 20,
       align = "left",
       style = list(color = "#154c79", useHTML = TRUE)) %>% 
+    hc_xAxis(
+    title = list(
+      text = "Fecha de observación",
+      style = list(color = "#154c79", fontWeight = "bold")
+    )
+  ) %>%
+  hc_yAxis(
+    title = list(
+      text = "Precipitación (mm)",
+      style = list(color = "#154c79", fontWeight = "bold")
+    ) 
+  ) %>%
     hc_exporting(
       enabled = TRUE,
       buttons = list(

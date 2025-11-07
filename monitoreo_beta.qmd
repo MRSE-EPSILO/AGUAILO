@@ -32,10 +32,20 @@ Servicios de Saneamiento Ilo S.A. – EPS ILO S.A.
 
 Se presentan cuatro estaciones de medición cuyos parámetros pueden apreciarse en los siguentes enlaces:
 
-* [Estación ASA_01_PO_01](metadatos/ASA_01_PO_01.pdf): Genera datos de precipitación.
-* [Estación ASA_01_PO_02](metadatos/ASA_01_PO_01.pdf): Genera datos de precipitación y temperatura.
-* [Estación ASA_01_PO_03](metadatos/ASA_01_PO_01.pdf): Genera datos de precipitación y temperatura.
-* [Estación ASA_02_SO](metadatos/ASA_01_PO_01.pdf): Genera datos del nivel del agua en un bofedal.
+* <a href="javascript:void(window.open('metadatos/ASA_01_PO_01.pdf','','width=800,height=600').onunload = function(){window.history.back();})">
+    Estación ASA_01_PO_01
+  </a>: Genera datos de precipitación.
+* <a href="javascript:void(window.open('metadatos/ASA_01_PO_02.pdf','','width=800,height=600').onunload = function(){window.history.back();})">
+    Estación ASA_01_PO_02
+  </a>: Genera datos de precipitación y temperatura.
+* <a href="javascript:void(window.open('metadatos/ASA_01_PP_03.pdf','','width=800,height=600').onunload = function(){window.history.back();})">
+    Estación ASA_01_PP_03
+  </a>: Genera datos de precipitación y temperatura.
+* <a href="javascript:void(window.open('metadatos/ASA_02_SO.pdf','','width=800,height=600').onunload = function(){window.history.back();})">
+    Estación ASA_02_SO
+  </a>: Genera datos del nivel del agua en un bofedal.
+
+
 
 Así también, los datos de la estación **ASA_01_PO_01** se encuentran en la plataforma de 
 <a href="https://www.datosabiertos.gob.pe/dataset/datos-metereol%C3%B3gicos-de-la-microcuenca-asana-en-el-marco-de-los-mecanismos-de-retribuci%C3%B3n" target="_blank" rel="noopener noreferrer">Datos abiertos</a>.
@@ -111,14 +121,14 @@ knitr::include_graphics("NDVI_2024_Asana.gif")
 ## GA
 
 ```{r}
-#| title: "Estación 01"
+#| title: "ASA_01_PO_01"
 source("Scripts/Estacion1.R")
 estacion1(carpeta = "datasets/ASA_01_PO_01")
 ```
 
 
 ```{r}
-#| title: "Estación 02"
+#| title: "ASA_01_PO_02"
 source("Scripts/Estacion2.R")
 qocha("datasets/ASA_01_PO_02")
 ```
@@ -126,13 +136,13 @@ qocha("datasets/ASA_01_PO_02")
 ## xddd
 
 ```{r}
-#| title: "Estación 03"
+#| title: "ASA_01_PP_03"
 source("Scripts/Estacion3.R")
 pesaje("datasets/ASA_01_PO_03")
 ```
 
 ```{r}
 #| title: "Estación de nivel"
-source("Scripts/Estacion4.R")
-bofedal("datasets/ASA_02_SO")
+#source("Scripts/Estacion4.R")
+#bofedal("datasets/ASA_02_SO")
 ```

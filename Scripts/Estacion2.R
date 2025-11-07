@@ -44,10 +44,22 @@ qocha <- function(carpeta){
       tooltip = list(valueDecimals = 1)) %>% 
     hc_xAxis(type = "datetime") %>% 
     hc_title(
-      text = "<b>Estación 02</b> - Precipitación diaria (mm)",
+      text = "Precipitación y temperatura",
       margin = 20,
       align = "left",
       style = list(color = "#154c79", useHTML = TRUE)) %>% 
+    hc_xAxis(
+    title = list(
+      text = "",
+      style = list(color = "#154c79", fontWeight = "bold")
+    )
+  ) %>%
+  hc_yAxis(
+    title = list(
+      text = "",
+      style = list(color = "#154c79", fontWeight = "bold")
+    )
+  ) %>%
     hc_exporting(
       enabled = TRUE,
       buttons = list(
